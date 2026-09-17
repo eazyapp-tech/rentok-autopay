@@ -10,6 +10,10 @@ Everything behind the Autopay push: what we decided, why, the research it rests 
 
 **Status:** the feature map is at version 3. Five points inside it are marked "(proposed)" and need Sanchay's yes, and several answers depend on Cashfree. See `decisions/open-questions.md`.
 
+## Working here with Claude Code
+
+Read **[CLAUDE.md](CLAUDE.md)** and **[STATUS.md](STATUS.md)** first. CLAUDE.md sets how the two of us work in this repo: what to read at the start of a session, what to do before it ends, who decides what, and how to write. STATUS.md says where the work stands right now. Claude Code loads CLAUDE.md on its own.
+
 ## Read in this order
 
 1. **[map/feature-map.md](map/feature-map.md)** is the document. It covers how Autopay works for every tenant, parent, manager, owner and for RentOk, moment by moment, and what we are not building.
@@ -27,8 +31,9 @@ Everything behind the Autopay push: what we decided, why, the research it rests 
 | `research/` | Legal research, the systems map, the Cashfree answers, market research, reviews of Kamal's plan and recording, and older drafts marked superseded |
 | `walkthroughs/` | The role-by-role walks: tenant, manager and owner, finance and operations, and two code walks |
 | `data/` | Numbers pulled from RentOk's data tool, with the workings |
-| `sources/` | Original documents: the Finance Ministry FAQ on the new UPI charge, Kamal's plan, and the transcript of his recording |
-| `handoffs/` | The session record, so anyone can pick the work up |
+| `sources/` | Original documents: the Finance Ministry FAQ on the new UPI charge, Kamal's plans and session handoff, the transcript of his recording, and `conversations/`, the notes from recorded discussions |
+| `handoffs/` | One record per session, so either of us can pick the work up |
+| `scripts/` | `check-writing.py`, the writing check to run before pushing |
 
 ## Rules that shape everything
 
@@ -57,6 +62,14 @@ In [eazyapp-tech/rentok-backend](https://github.com/eazyapp-tech/rentok-backend)
 | [#7006](https://github.com/eazyapp-tech/rentok-backend/issues/7006) | The setup reminder skips anyone who ever tried |
 
 In [eazyapp-tech/eazypg-marketplace](https://github.com/eazyapp-tech/eazypg-marketplace), the web check-in: [#915](https://github.com/eazyapp-tech/eazypg-marketplace/issues/915), required Autopay blocks check-in.
+
+## Links to things that are not files
+
+- **The merged conversation timeline,** published as a page: https://claude.ai/code/artifact/001a1efe-871a-47fb-a9bb-97b46a642fee
+- **Kamal's plan, as a page:** https://claude.ai/code/artifact/a9e66403-1f6b-4929-bb14-8961ba462f5c
+- **Figma, payment page revamp:** https://www.figma.com/design/4eP9PIjrNVhGmGLiqADN7D/Payment-Page-Revamp-%E2%80%94-pay.rentok.com
+- **Figma, Autopay in every state and surface:** the same file, node 2:2.
+- **Kamal's screen recording** of the RentOk and CRED flows: held outside this repo, because it shows personal bank and card screens. The transcript is at `sources/2026-09-17-kamal-recording-transcript.md` and the frame-by-frame notes at `research/kamal-recording-and-screens.md`.
 
 ## How this repo is kept
 
