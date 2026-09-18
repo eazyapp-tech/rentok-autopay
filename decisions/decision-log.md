@@ -145,6 +145,8 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
 - R53 (18 Sep, Sanchay on the call with Nimit, amounts confirmed in chat) A property can turn the platform fee line off, or set it anywhere from ₹58 to ₹118 a month (₹49+GST to ₹100+GST). The floor stops the line suggesting RentOk costs less than it does. Above the ceiling, the change is really a rent rise and goes through the rent change flow.
 
+- R54 (18 Sep, Sanchay) A mandate counts toward the target only if a debit is queued for it, or it is waiting for its first due. An active mandate with nothing queued does not count, so the target cannot be met by Autopays that never collect.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.

@@ -5,9 +5,9 @@ Update this at the end of every session. Newest entry on top.
 ## Now
 
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
-- **Rulings:** R1 to R53, in `decisions/decision-log.md`.
+- **Rulings:** R1 to R54, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, the counting rule, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), and five points marked "(proposed)" in the map. They are listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), and five points marked "(proposed)" in the map. They are listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** ten written questions, the first being whether one mandate can be debited in parts on the same day. Also in `decisions/open-questions.md`.
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** drafted for Kamal in `drafts/cashfree-email.md`, not sent.
