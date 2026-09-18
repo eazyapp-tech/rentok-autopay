@@ -22,7 +22,7 @@ These follow from his rulings, and are marked "(proposed)" in the feature map.
 
 Ask these in one written message. The first is the largest: the plan for dues above ₹15,000 rests on it.
 
-1. **Dues taken in parts.** Can one mandate be debited several times on the same day, in parts of up to ₹15,000? If not, can the parts run on the following days? How do the notice and the retries work for each part? (18 Sep: Kamal heard from PhonePe that several debits in 24 hours are allowed. Vivek and Jatin found earlier that Cashfree allowed only one per 24 hours. Ask Cashfree which is true today.)
+1. **Dues taken in parts.** Can one mandate be debited several times on the same day, in parts of up to ₹15,000? If not, can the parts run on the following days? How do the notice and the retries work for each part? (18 Sep: Kamal heard from PhonePe that several debits in 24 hours are allowed. Vivek and Jatin found earlier that Cashfree allowed only one per 24 hours. Ask Cashfree which is true today. Other providers' docs (18 Sep, `research/psp-docs-crosscheck.md`): Razorpay says NPCI allows one successful debit per billing cycle; PhonePe's 20-a-day page is from 2024 and withdrawn. If one per period holds for on-demand mandates, both parts above ₹15,000 and "Request payment via Autopay" need a fallback.)
 2. **The first payment at setup.** Can the approval amount be the tenant's real first payment, kept rather than refunded? Is there an upper limit? Does it avoid the new 0.4% UPI charge?
 3. **A failed first debit.** Does the mandate get cancelled, as some sources say NPCI requires?
 4. **Money routed per due.** Can different dues inside one debit go to different bank accounts? Cashfree's split is a fixed percentage per mandate, set at creation.

@@ -1,6 +1,6 @@
 # Draft email to Cashfree (for Kamal to send)
 
-Status: draft, 18 Sep 2026. Kamal owns the Cashfree relationship, so he edits and sends it. Answers go into `research/cashfree-docs-answers.md` with the date and who replied.
+Status: draft, 18 Sep 2026, sharpened the same day with other providers' docs (`research/psp-docs-crosscheck.md`). Kamal owns the Cashfree relationship, so he edits and sends it. Answers go into `research/cashfree-docs-answers.md` with the date and who replied.
 
 ---
 
@@ -13,23 +13,22 @@ RentOk is turning on Subscriptions for all its properties from 1 October. We exp
 We use PG Subscriptions (`/pg/subscriptions`), mostly ON_DEMAND plans with the controlled flow (notify, then execute), and some PERIODIC plans.
 
 **Most urgent**
-1. **More than one debit a day on one mandate.**
-   - Tenant rent is often above ₹15,000, so we plan to take it in parts of up to ₹15,000 each on one UPI mandate.
-   - Can one mandate be debited more than once in 24 hours? Our engineers found earlier that only one debit per 24 hours went through.
-   - If more than one is not allowed, can the parts run on consecutive days?
-   - For each part: is a separate pre-debit notice needed, and how do retries work?
+1. **More than one successful debit per period on one "as presented" (on-demand) UPI mandate.**
+   - Tenant rent is often above ₹15,000, so we plan to take it in parts of up to ₹15,000 each on one mandate. We also plan to raise extra debits in the same month for other bills (electricity, repairs), with the tenant's approval.
+   - Razorpay's docs say "NPCI allows only one successful debit on a token per billing cycle". What is a billing cycle for an "as presented" mandate on Cashfree?
+   - Can two or more successful debits run in one month on the same mandate, on consecutive days (one open notice at a time)? Our engineers found earlier that only one per 24 hours went through.
+   - Does NPCI's limit of 4 attempts per mandate (August 2025) count per debit or per period?
 2. **Cancelling one scheduled debit.**
-   - When a tenant pays by another method after we have sent the notice, can we cancel that one debit and keep the mandate?
-   - Which API does this, for ON_DEMAND and for PERIODIC plans?
-3. **A sandbox for Subscriptions.**
-   - Can we create, notify, execute and cancel mandates in sandbox, with sandbox keys?
-   - If not, what do you recommend for testing before going live?
+   - Your Manage Payment API says it can "stop a pending charge before it is debited". Does that work after the pre-debit notice has gone out in the controlled flow (notify, then execute), and does the mandate stay active?
+   - Does a notice that was never executed block the next notice?
+   - Same question for PERIODIC plans.
+3. **Please enable UPI Autopay on our sandbox account.** Your docs say the account manager can switch it on. We need to create, notify, execute, fail and cancel mandates there this week.
 
 **Setup**
 
 4. **The first payment at setup.**
    - Can the authorisation amount be the tenant's real first payment, kept rather than refunded (`authorization_amount_refund: false`)?
-   - Is there an upper limit, and does it count as a mandate transaction for the new UPI charge from 15 Oct?
+   - RBI allows the first debit with registration. Is there an upper limit on this amount, and does it count as a mandate transaction (no new 0.4% UPI charge from 15 Oct)?
 5. **The merchant name.**
    - What name does the tenant see in her UPI app and in her bank's pre-debit notice?
    - Can it carry the property's name? About 20% of our properties use their own brand.
@@ -42,12 +41,12 @@ We use PG Subscriptions (`/pg/subscriptions`), mostly ON_DEMAND plans with the c
 7. **A failed first debit.** Is the mandate cancelled, as some sources say NPCI requires?
 8. **Failed attempts.**
    - Are they billed like successful debits?
-   - Do banks charge the customer for a failed UPI Autopay or e-NACH debit, and do you have data by bank? One of our tenants was charged ₹200 several times.
+   - Your FAQ says a failed NACH debit costs the customer the bank's cheque bounce charge. Do banks charge anything for a failed UPI Autopay debit? One of our tenants was charged ₹200 several times.
 9. **Money routed per due.**
    - Split on a subscription is a fixed percentage per vendor, set at creation.
    - Can different dues inside one debit settle to different bank accounts?
    - If not, what do you recommend?
-10. **Blocked hours.** What happens to a debit scheduled inside NPCI's blocked hours in the standard flow?
+10. **Blocked hours.** NPCI's peak hours are 10:00 to 13:00 and 17:00 to 21:30. In the standard flow, is a debit scheduled inside them moved to the next allowed window, or rejected?
 11. **Changing a PERIODIC mandate.** Can the debit day or the amount change without a new approval from the customer, up to the original maximum?
 12. **Cancelling mandates made on the new API.**
     - Our code cancels through `/api/v2/subscriptions/{id}/cancel`, but the mandates were created on `/pg/subscriptions`.
