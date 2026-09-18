@@ -147,6 +147,15 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
 - R54 (18 Sep, Sanchay) A mandate counts toward the target only if a debit is queued for it, or it is waiting for its first due. An active mandate with nothing queued does not count, so the target cannot be met by Autopays that never collect.
 
+- R55 to R61 (18 Sep, decided by Claude on Sanchay's instruction "u the expert, figure out & decide"; Sanchay can overturn any of them)
+  - R55 Live payment links move from the old page to the new page in engineering steps, finished by 25 Sep. This is a safe rollout, not tenant waves (R37 unaffected). Electricity links stay on the old page until the new meter screen matches it.
+  - R56 Before the next app release, the tenant app shows Autopay through a server-sent home announcement, because the frozen app cannot show a new card.
+  - R57 When the WhatsApp number's daily limit binds, sends go first to tenants whose dues come soonest, and every tenant is reached before 30 Sep. This orders sending; it is not a priority group.
+  - R58 An e-NACH tenant whose approved limit already covers her regular dues is not asked to approve again.
+  - R59 Manual-schedule tenants are offered Option 2 only, because a fixed schedule cannot follow dates a manager sets.
+  - R60 Outside check-in, the setup screen has one terms tick she sets herself, saved with the terms version and time, the same as check-in (#935).
+  - R61 The property-level "Autopay off" switch is removed; only "required" can be turned off, and existing mandates keep running (settles #7055).
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
