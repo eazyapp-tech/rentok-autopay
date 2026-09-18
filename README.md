@@ -18,24 +18,28 @@ Read **[CLAUDE.md](CLAUDE.md)** and **[STATUS.md](STATUS.md)** first. CLAUDE.md 
 
 0. **[The interactive map](https://claude.ai/artifact/UoeBeNA6YPLcd6eSA7gL94)**, or **[map/diagrams.md](map/diagrams.md)** on GitHub: the whole thing in pictures.
 1. **[map/feature-map.md](map/feature-map.md)** is the document. It covers how Autopay works for every tenant, parent, manager, owner and for RentOk, moment by moment, and what we are not building.
-2. **[decisions/decision-log.md](decisions/decision-log.md)** holds every ruling (R1 to R51), what each one replaced, the things ruled out, and the facts checked by hand.
+2. **[decisions/decision-log.md](decisions/decision-log.md)** holds every ruling (R1 to R62), what each one replaced, the things ruled out, and the facts checked by hand.
 3. **[decisions/open-questions.md](decisions/open-questions.md)** is the list of what is still unanswered, and who can answer it.
 4. **[data/growth-math.md](data/growth-math.md)** shows where the mandates can come from, with the numbers behind them.
-5. **[research/cashfree-docs-answers.md](research/cashfree-docs-answers.md)** is what Cashfree's documentation says, question by question, with links.
+5. **[research/cashfree-docs-answers.md](research/cashfree-docs-answers.md)** is what Cashfree's documentation says, question by question, with links. **[research/psp-docs-crosscheck.md](research/psp-docs-crosscheck.md)** checks the open Cashfree questions against PhonePe, Razorpay, Juspay, PayU and Stripe.
+6. **[map/build-tickets.md](map/build-tickets.md)** lists the 36 build tickets filed on 18 Sep under epic eazyapp-tech/rentok-backend#6846, each with its cut rank (R62).
+7. **[research/code-check-18sep.md](research/code-check-18sep.md)** is every Autopay and payment issue checked against the code on 18 Sep, with the 33 new issues filed that day.
+8. **[drafts/cashfree-email.md](drafts/cashfree-email.md)** is the email for Kamal to send to Cashfree, and **[drafts/ticket-format.md](drafts/ticket-format.md)** is how build tickets are written.
 
 ## What is in each folder
 
 | Folder | What it holds |
 | --- | --- |
-| `map/` | The feature map, the single document to build from |
+| `map/` | The feature map (the single document to build from), its diagrams, and the list of filed build tickets |
 | `decisions/` | The decision log, the success metrics, and the open questions |
-| `research/` | Legal research, the systems map, the Cashfree answers, market research, reviews of Kamal's plan and recording, and older drafts marked superseded |
+| `research/` | The 18 Sep code check, the check of older lists and the Nimit call, other payment providers' docs, legal research, the systems map, the Cashfree answers, market research, reviews of Kamal's plan and recording, and older drafts marked superseded |
 | `walkthroughs/` | The role-by-role walks: tenant, manager and owner, finance and operations, and two code walks |
 | `data/` | Numbers pulled from RentOk's data tool, with the workings |
-| `sources/` | Original documents: the Finance Ministry FAQ on the new UPI charge, Kamal's plans and session handoff, the transcript of his recording, and `conversations/`, the notes from recorded discussions |
+| `sources/` | Original documents: RBI's e-mandate framework 2026 (`rbi/`), NPCI's Autopay circular OC-223 (`npci/`, a scanned image), captured Cashfree docs and pricing (`cashfree-docs/`), Razorpay and press captures (`other-providers/`), the Finance Ministry FAQ on the new UPI charge, Kamal's plans and session handoff, the transcript of his recording, and `conversations/`, the notes from recorded discussions |
 | `handoffs/` | One record per session, so either of us can pick the work up |
 | `visuals/` | The interactive page and how to update it |
-| `scripts/` | `check-writing.py`, the writing check to run before pushing |
+| `scripts/` | `check-writing.py`, the writing check to run before pushing, and `ticket-tools/`, the scripts that filed the build tickets |
+| `drafts/` | Drafts not yet sent: the Cashfree email, and the ticket format |
 
 ## Rules that shape everything
 
