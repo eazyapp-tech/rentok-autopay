@@ -5,8 +5,9 @@ Update this at the end of every session. Newest entry on top.
 ## Now
 
 - **Feature map:** version 3, in `map/feature-map.md`.
-- **Rulings:** R1 to R51, in `decisions/decision-log.md`.
-- **Waiting on Sanchay:** five points marked "(proposed)" in the map. They are listed in `decisions/open-questions.md`.
+- **Rulings:** R1 to R52, in `decisions/decision-log.md`.
+- **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
+- **Waiting on Sanchay:** the platform fee floor and ceiling (open question 6), which brand whitelabelled tenants see (7), the stop-all switch (8), #7055 (what Autopay off means for running mandates), and five points marked "(proposed)" in the map. They are listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** ten written questions, the first being whether one mandate can be debited in parts on the same day. Also in `decisions/open-questions.md`.
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Not done yet:** the Cashfree message itself, engineering tickets from the map, mirroring into Linear (only on Sanchay's go), and linking this repo from epic #6846.
@@ -14,6 +15,10 @@ Update this at the end of every session. Newest entry on top.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 18 Sep 2026 (evening), Sanchay with Claude Code
+- Checked two older Autopay lists and the 18 Sep call with Nimit against the record (`research/older-lists-check.md`). Logged R52: one Autopay link per tenant.
+- Five reviewers read every app's code against every issue and claim. Filed 26 issues and commented on 13, plus the epic (`research/code-check-18sep.md`). The full reports are kept outside this public repo until it goes private.
 
 ### 18 Sep 2026, Sanchay with Claude Code
 - Drew the feature map as nine Mermaid diagrams (`map/diagrams.md`), and as an interactive page: https://claude.ai/artifact/UoeBeNA6YPLcd6eSA7gL94

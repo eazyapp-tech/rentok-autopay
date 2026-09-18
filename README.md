@@ -48,6 +48,8 @@ Read **[CLAUDE.md](CLAUDE.md)** and **[STATUS.md](STATUS.md)** first. CLAUDE.md 
 
 ## Work already filed
 
+**18 Sep code check:** 26 more issues, 3 of them P0, are listed in `research/code-check-18sep.md`. Epic #6846 carries the fix-before-30-Sep order.
+
 In [eazyapp-tech/rentok-backend](https://github.com/eazyapp-tech/rentok-backend), all linked on epic [#6846](https://github.com/eazyapp-tech/rentok-backend/issues/6846):
 
 | Issue | What it is |
