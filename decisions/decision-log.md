@@ -141,6 +141,8 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 - I9 (Metabase 17 Sep) Median rent ₹8,250; 36.5% of tenants pay above ₹10,000. Details in 13.
 - I8 Possible e-commerce operator exposure (GST section 9(5), TCS, TDS) for RentOk; tax opinion needed.
 
+- R52 (18 Sep, Sanchay on the call with Nimit) One Autopay link per tenant at a time. A new tenant still in check-in sets Autopay up inside check-in, and the check-in link opens at the Autopay step. Everyone else, including a tenant who chose "Set up later", gets the payment page as the Autopay link. Outside check-in, Autopay does not wait for KYC.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
