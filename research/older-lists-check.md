@@ -115,14 +115,14 @@ All are real, but outside Autopay.
 Recorded on Sanchay's NeoSapien pendant. Sanchay read the "What we need from Nimit" list aloud, and Nimit answered item by item. A 1-minute follow-up at 17:02 added the tenant's own controls. Notes below, checked against the code where Nimit's answer disagreed with a filed issue.
 
 ## What Nimit confirmed or offered
-- **Autopay state on the payment page is cheap.** An existing call (tenant details for the payment page) already returns subscription details. The same logic can be pulled out and reused (#6825).
+- **Autopay state on the payment page is cheap.** The web check-in flow already looks up the tenant's Autopay subscription. That logic can be pulled out into one shared function and reused in the payment page's tenant call (#6825). The code agrees: the lookup sits in the check-in call (`getCheckIn`, `tenant.ts:8185`) and two app calls, and the payment page's call (`tenant.ts:14794-15080`) has none yet.
 - **Pay now and turn on Autopay in one step works** when her pending dues are at most the mandate amount: the dues go in as the approval amount, are debited at approval, and are set against her dues. If dues are higher, a second payment is needed.
 - **Opening her UPI app directly** needs RentOk's own approval screen instead of Cashfree's default page, and the allowed methods passed when the Cashfree token is made. Matches the map.
 - **Autopay grace days already exist on manager web**, as a setting separate from the normal grace days. Missing on the phone app. Most properties have it at 0 today, so the 7-day default (R9, R41) still has to be set.
 - **The terms tick:** Nimit says the backend already takes it and only the screen needs to show it. The code shows the tick pre-set to yes and hidden, filed as eazypg-marketplace#935.
 - **Reminder links to Autopay tenants** will be stopped (#6830).
 - **Move-out cancels the mandate** (#7005): agreed.
-- **Paid another way before the debit:** "we can cancel that" (#7002).
+- **Paid another way before the debit:** Nimit was not sure the queued debit is cancelled today, and said it needs to be (#7002). The code confirms nothing cancels a single queued debit; only whole mandates can be cancelled.
 
 ## Where Nimit disagreed, and what the code says
 | Nimit's view | Code on backend `master`, 18 Sep (dc98a0d78) | Result |
