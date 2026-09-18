@@ -26,7 +26,7 @@
 - the full code-check reports;
 - the ticket texts as drafted, with the coverage table and cut order;
 - the bug summaries;
-- the frames and audio from Kamal's recording.
+- Kamal's 17 Sep recording, with its frames and audio (added on 18 Sep with Sanchay's approval).
 
 When this repo goes private, move them into `research/` and `map/`, and archive the companion repo.
 
