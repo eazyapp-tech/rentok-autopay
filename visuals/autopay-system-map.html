@@ -437,8 +437,8 @@ footer a{color:var(--info)}
     <div class="panel stat"><b class="mono">~18,000</b><span>online payments on the 1st: "pay now and turn on Autopay"</span></div>
   </div>
   <div class="diagram"><pre class="mermaid">flowchart LR
-    S1[&quot;1. Login fix for Autopay routes&quot;] --&gt; S2[&quot;2. Safe debits: double charge, paid elsewhere, empty month, move-out, debit time, allowed days&quot;]
-    S2 --&gt; S3[&quot;3. Check-in: set up later and per-tenant switch&quot;]
+    S0[&quot;0. Test with real money on staff tenants, no sandbox&quot;] --&gt; S1[&quot;1. Login and fake-payment fixes&quot;] --&gt; S2[&quot;2. Safe debits: double charge, paid elsewhere, debits never queued plus backfill, move-out, debit time, allowed days&quot;]
+    S2 --&gt; S3[&quot;3. Check-in: set up later, per-tenant switch, fee payer fix, honest success, terms&quot;]
     S3 --&gt; S4[&quot;4. One setup screen with two options&quot;]
     S4 --&gt; ON[&quot;Autopay on and required for everyone&quot;]
     S2 --&gt; MF[&quot;Money fixes before the first October debit: payouts, GST, saved amounts&quot;]
