@@ -9,7 +9,7 @@
 
 ## The headline
 - **Every older issue is still true.** None has been fixed.
-- **26 new issues were filed**, 3 of them P0.
+- **33 new issues were filed**, 3 of them P0. Seven came from a second check while the build tickets were being written.
 - **473 of the 781 current tenants with an active mandate have no debit queued.** Only 249 do. Without a backfill, those 473 are not debited in October while everyone believes Autopay is on. Causes:
   - #6999: an empty month ends Autopay;
   - #7045: a cancelled debit gets stuck;
@@ -48,8 +48,15 @@
 | rentok_tenant_package#42 | P1 | The app's Autopay entry never shows |
 | rentokmanagerflutter#304 | P2 | "Remind Tenant" says a message went out when none did |
 | rentokmanagerflutter#305 | P2 | The Autopay settings sheet starts and saves as on |
+| rentok-backend#7059 | P1 | Mandates have no end date, so they outlive the agreement |
+| rentok-backend#7060 | P1 | Cancelling leaves a debit already sent to Cashfree running |
+| rentok-backend#7061 | P1 | The setup reminder route needs no login |
+| rentok-backend#7062 | P1 | A rent rise above her approved amount is taken partly, and nobody is told |
+| rentok-backend#7063 | P2 | A debit with no matching record is mistaken for the ₹1 setup payment |
+| rentok-backend#7064 | P2 | Only monthly rent can use Autopay, but other billing periods must too |
+| eazypg-marketplace#943 | P2 | Check-in asks for Autopay before the agreement |
 
-Comments with new evidence were added to #6816, #6817, #6825, #6829, #6835, #6861, #6866, #6880, #6995, #6999, #7002, #7018, #7019 and to the epic #6846, which now lists what to fix before 30 Sep.
+Comments with new evidence were added to #7005, #7039 (two marketplace pages still call the old routes), #7048, #7049, #7022 (engineering's fee plan, answered with the rulings), #6816, #6817, #6825, #6829, #6835, #6861, #6866, #6880, #6995, #6999, #7002, #7018, #7019 and to the epic #6846, which now lists what to fix before 30 Sep.
 
 ## Where Nimit's answers on the call were checked
 | What Nimit said | What the code shows |
