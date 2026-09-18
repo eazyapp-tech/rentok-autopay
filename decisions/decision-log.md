@@ -42,7 +42,7 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - Debits follow each tenant's own billing cycle.
   - Large amounts go in ₹15,000 parts.
 - R29 (17 Sep) Late fines are never taken by the Autopay debit. They are paid by link only.
-- R30 (17 Sep) Prepaid electricity recharges are not taken by the debit; the tenant tops up herself. Electricity bills raised by the property are included.
+- R30 (17 Sep) Prepaid electricity recharges are not taken by the debit; the tenant tops up herself. Electricity bills raised by the property are included. *(The second sentence was replaced later the same day by R46 and R47: electricity bills are not regular dues, so they are taken through "Request payment via Autopay" under Option 2, or sent as "Pay now" under Option 1. Noted 18 Sep.)*
 - R31 (17 Sep) The ₹49 is charged per billed tenant (the person who gets the rent invoice). Co-tenants and parents who only sign pay nothing.
 - R32 (17 Sep) How the ₹49 is collected:
   - **Management pays:** RentOk takes it from the tenant's online payment before paying the property.
