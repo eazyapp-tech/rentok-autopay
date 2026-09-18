@@ -10,6 +10,7 @@ Update this at the end of every session. Newest entry on top.
 - **Waiting on Cashfree:** ten written questions, the first being whether one mandate can be debited in parts on the same day. Also in `decisions/open-questions.md`.
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Not done yet:** the Cashfree message itself, engineering tickets from the map, mirroring into Linear (only on Sanchay's go), and linking this repo from epic #6846.
+- **Access:** public until Kamal has GitHub access, then private. Until then Kamal sends his work to Sanchay, who adds it here.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log

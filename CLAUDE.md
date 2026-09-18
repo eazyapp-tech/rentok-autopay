@@ -19,6 +19,12 @@ Do all four, before the session ends:
 3. Run `python3 scripts/check-writing.py .` and fix what it reports in the files you touched.
 4. Commit and push. Never leave work only on a laptop.
 
+## Access for now (18 Sep 2026)
+
+- The repo is public for a short while, because Kamal does not have GitHub access yet.
+- Until he does, he sends his changes and new work to Sanchay. Sanchay's session adds them here, with Kamal named in the commit message and in STATUS.md.
+- Once Kamal has an account, he is added with write access and the repo goes private again. Until then, treat everything written here as public.
+
 ## Who decides what
 
 - **Product rulings are Sanchay's.** Anything that changes what the product does goes into `decisions/decision-log.md` as a new R number, with its date and what it replaced. Never quietly edit an old ruling.
