@@ -44,6 +44,9 @@ Then these sections, in this order, with these exact headings:
 6. `## Not in this ticket` : what is deliberately elsewhere, with the ticket id that covers it.
 7. `## For the developer` : this is the only place for code. Per repo: what exists today (file:line at commit, 1 to 3 decisive lines quoted or described), what changes, data or API shape where helpful, and which filed issues must land first. Name the Cashfree API/flow and flag [ask Cashfree] items.
 8. `## Related` : links as `eazyapp-tech/<repo>#<n>` with a few words each, plus the map section name.
+9. `## Sources` : regulation (RBI e-mandate framework 2026 by paragraph, the Finance Ministry MDR FAQ by question, NPCI circulars), Cashfree documentation URLs (from `research/cashfree-docs-answers.md`), other providers' docs where they confirm the same NPCI rule (`research/psp-docs-crosscheck.md`), and research files in this repo, a few words each.
+
+**Citing rules.** A rule that comes from regulation or Cashfree, not a ruling, carries its source in "Rules behind it". Every Cashfree behaviour in "For the developer" carries its doc URL, marked [Cashfree docs]; an unanswered one is marked [ask Cashfree] with its question number in `drafts/cashfree-email.md`.
 
 ## Writing rules (sections 1 to 6 are read by the CPO and non-native English speakers)
 - Plain everyday words, short sentences. No em dashes anywhere (use commas, colons, full stops). No: robust, seamless, leverage, delve, moreover, notably, furthermore, canonical, downstream, cohort, reconcile.
