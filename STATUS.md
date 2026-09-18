@@ -14,6 +14,11 @@ Update this at the end of every session. Newest entry on top.
 
 ## Log
 
+### 18 Sep 2026, Sanchay with Claude Code
+- Drew the feature map as nine Mermaid diagrams (`map/diagrams.md`), and as an interactive page: https://claude.ai/artifact/UoeBeNA6YPLcd6eSA7gL94
+- Read Kamal's two pages from 18 Sep (the Notion plan and the "Autopay Flows" page). Nothing new needs a ruling; see `research/kamal-artifacts-check.md`. Two of the Notion diagrams do not render.
+- Added the missing conversation notes, Kamal's plan version 2 and session handoff, the Metabase queries, CLAUDE.md, STATUS.md and the handoff template.
+
 ### 17 Sep 2026, Sanchay with Claude Code
 - Read every recorded Autopay conversation from 15 and 16 Sep, and merged them in date order.
 - Walked the product as tenant, manager, owner, RentOk finance and operations, and through the code in five repositories.

@@ -1,0 +1,558 @@
+<title>Autopay System Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#15202C; --muted:#586576; --line:#D8DEE6;
+  --accent:#0B7A62; --accent-soft:#E2F1EC; --warn:#A8680F; --warn-soft:#FAEFD9;
+  --bad:#B23A36; --bad-soft:#F7E2E0; --info:#2D5A9E; --info-soft:#E3EBF7;
+  --chip:#EEF1F5; --shadow:0 1px 2px rgba(20,32,44,.06),0 6px 20px rgba(20,32,44,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E141B; --surface:#151D27; --ink:#E4EAF1; --muted:#97A3B3; --line:#263140;
+    --accent:#3CC4A0; --accent-soft:#12302A; --warn:#E0A64A; --warn-soft:#33260F;
+    --bad:#E87A74; --bad-soft:#3A1C1B; --info:#7FA6E6; --info-soft:#18243A;
+    --chip:#1C2633; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E141B; --surface:#151D27; --ink:#E4EAF1; --muted:#97A3B3; --line:#263140;
+  --accent:#3CC4A0; --accent-soft:#12302A; --warn:#E0A64A; --warn-soft:#33260F;
+  --bad:#E87A74; --bad-soft:#3A1C1B; --info:#7FA6E6; --info-soft:#18243A;
+  --chip:#1C2633; --shadow:none;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+h1{font-size:30px;line-height:1.15;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:21px;margin:0 0 6px;text-wrap:balance}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px;max-width:68ch}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.lede{color:var(--muted);max-width:70ch}
+header{display:grid;gap:18px;margin-bottom:22px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;flex-wrap:wrap;padding-block:10px;margin-bottom:26px}
+.nav a{font-size:13px;color:var(--ink);text-decoration:none;padding:5px 10px;border-radius:999px;background:var(--chip)}
+.nav a:hover,.nav a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none}
+section{margin-bottom:44px;scroll-margin-top:64px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+/* target meter */
+.meter{display:grid;gap:10px}
+.meter .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.big{font-size:34px;font-weight:600;letter-spacing:-.01em}
+.bar{height:12px;border-radius:6px;background:var(--chip);overflow:hidden;position:relative}
+.bar i{display:block;height:100%;background:var(--accent)}
+.bar .goal{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.6}
+.stat{display:grid;gap:2px}
+.stat b{font-size:22px;font-weight:600}
+.stat span{font-size:13px;color:var(--muted)}
+/* dates */
+.dates{display:flex;gap:0;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.date{flex:1 0 128px;padding:12px 14px;border-right:1px solid var(--line)}
+.date:last-child{border-right:0}
+.date .d{font-weight:600}
+.date .t{font-size:13px;color:var(--muted)}
+.date.hot{background:var(--accent-soft)}
+.date.hot .d{color:var(--accent)}
+.date.warn{background:var(--warn-soft)}
+/* rails */
+.rails{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.rail{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface)}
+.rail.good{border-color:var(--accent)}
+.rail .cost{font-size:30px;font-weight:600}
+.rail.bad .cost{color:var(--bad)}
+.rail.good .cost{color:var(--accent)}
+.rail ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+/* hours band */
+.hours{display:grid;grid-template-columns:repeat(24,1fr);height:34px;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.hours div{background:var(--accent-soft)}
+.hours div.no{background:var(--bad-soft)}
+.hlabels{display:grid;grid-template-columns:repeat(24,1fr);font-size:11px;color:var(--muted);margin-top:4px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+/* stepper */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-bottom:12px}
+.step{all:unset;cursor:pointer;display:grid;gap:2px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.step .n{font-size:12px;color:var(--muted)}
+.step .l{font-weight:600}
+.step[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.detail{border-left:3px solid var(--accent);padding:4px 0 4px 16px}
+.detail ul{margin:6px 0 0;padding-left:18px}
+.detail li{margin:4px 0}
+.rn{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--info);background:var(--info-soft);padding:1px 6px;border-radius:4px;white-space:nowrap}
+/* option compare */
+.opt{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.opt h3 .tag{font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:14px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+/* diagrams */
+.diagram{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:12px}
+.diagram pre.mermaid{margin:0;background:transparent;display:flex;justify-content:center;min-width:560px}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+/* states chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:12.5px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.chip.y{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.chip.n{color:var(--muted)}
+/* charges */
+.charges{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.charge{border-top:4px solid var(--info);background:var(--surface);border-radius:8px;padding:14px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.charge.p{border-top-color:var(--accent)}
+.charge.g{border-top-color:var(--warn)}
+.charge .amt{font-size:20px;font-weight:600;margin:4px 0}
+/* table */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 10px}
+.filters button{font:inherit;font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:720px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--chip)}
+tr:last-child td{border-bottom:0}
+td.yes{color:var(--accent)}
+td.ask{color:var(--warn)}
+td.no{color:var(--muted)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+footer a{color:var(--info)}
+@media (max-width:520px){h1{font-size:25px}.big{font-size:28px}.kv{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">RentOk · Autopay push · feature map version 3</div>
+    <h1>Autopay, drawn end to end</h1>
+    <p class="lede">How Autopay works for every tenant, parent, manager, owner and for RentOk: the journey, every state, one debit step by step, where the money goes, and the push to 1 Oct. Drawn from the feature map in <span class="mono">eazyapp-tech/rentok-autopay</span>. Where this page and the map disagree, the map wins.</p>
+  </div>
+
+  <div class="panel meter" aria-label="Progress to the target">
+    <div class="row">
+      <div><div class="eyebrow">Tenants on Autopay</div><div class="big mono">778 <span style="font-size:18px;color:var(--muted)">of 70,000</span></div></div>
+      <div class="stat" style="text-align:right"><b class="mono">4,950 a day</b><span>needed, 17 Sep to the end of 1 Oct</span></div>
+    </div>
+    <div class="bar" role="img" aria-label="778 of 70,000, about 1 percent"><i style="width:1.11%"></i><span class="goal" style="left:calc(100% - 2px)"></span></div>
+    <div class="grid g3">
+      <div class="stat"><b class="mono">69,200</b><span>gap to the target (the CEO's 70,000 to 75,000)</span></div>
+      <div class="stat"><b class="mono">~5 a day</b><span>new mandates today</span></div>
+      <div class="stat"><b class="mono">52k to 79k</b><span>low and high estimates if every source runs at once</span></div>
+    </div>
+  </div>
+
+  <div class="dates" role="list" aria-label="Fixed dates">
+    <div class="date" role="listitem"><div class="d mono">17 Sep</div><div class="t">Map written, 778 on Autopay</div></div>
+    <div class="date warn" role="listitem"><div class="d mono">18 Sep</div><div class="t">App release freeze</div></div>
+    <div class="date" role="listitem"><div class="d mono">24 Sep</div><div class="t">Release 36 public, offsite starts</div></div>
+    <div class="date warn" role="listitem"><div class="d mono">24 to 27 Sep</div><div class="t">Team offsite, on-call only</div></div>
+    <div class="date hot" role="listitem"><div class="d mono">30 Sep, 1 Oct</div><div class="t">Biggest push. Target counted at the end of 1 Oct</div></div>
+    <div class="date" role="listitem"><div class="d mono">1 Oct</div><div class="t">Platform fee starts, after notice</div></div>
+    <div class="date hot" role="listitem"><div class="d mono">15 Oct</div><div class="t">New 0.4% UPI charge begins</div></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <a href="#why">Why</a><a href="#journey">Journey</a><a href="#options">Two options</a><a href="#states">States</a><a href="#debit">One debit</a><a href="#request">Payment requests</a><a href="#money">Money</a><a href="#pause">Pause</a><a href="#push">Push to 1 Oct</a><a href="#who">Who does what</a>
+</nav>
+
+<section id="why">
+  <div class="eyebrow">Why this exists</div>
+  <h2>The same ₹10,000 rent, two ways to collect it</h2>
+  <p class="lede">From 15 Oct, UPI payments above ₹2,000 made to a business carry a charge of 0.4%, capped at ₹300. The business pays it and may not pass it to the customer. Autopay debits carry none.</p>
+  <div class="rails">
+    <div class="rail bad">
+      <div class="eyebrow">Payment link, QR or collect request</div>
+      <div class="cost mono">₹47.20</div>
+      <div class="t">new UPI charge a month, with GST, paid by management</div>
+      <ul><li>Tenant pays by hand, every month</li><li>82% of RentOk's online payments are above ₹2,000</li><li>Median rent is ₹8,250, so about ₹39 a month at the median</li></ul>
+    </div>
+    <div class="rail good">
+      <div class="eyebrow">Autopay mandate</div>
+      <div class="cost mono">₹0</div>
+      <div class="t">new UPI charge, at any rent</div>
+      <ul><li>Approved once, debits on her day</li><li>Cashfree's own fee (about ₹15 a debit) is covered by RentOk's ₹49 service charge</li><li>Nobody tells the tenant about the UPI charge. The pitch: never miss rent</li></ul>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:14px">
+    <h3>When NPCI lets an Autopay debit run</h3>
+    <div class="hours" role="img" aria-label="Allowed before 10:00, 13:00 to 17:00, after 21:30. Blocked 10:00 to 13:00 and 17:00 to 21:30.">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      <div class="no"></div><div class="no"></div><div class="no"></div>
+      <div></div><div></div><div></div><div></div>
+      <div class="no"></div><div class="no"></div><div class="no"></div><div class="no"></div>
+      <div></div><div></div><div></div>
+    </div>
+    <div class="hlabels mono"><span>0</span><span></span><span></span><span>3</span><span></span><span></span><span>6</span><span></span><span></span><span>9</span><span></span><span></span><span>12</span><span></span><span></span><span>15</span><span></span><span></span><span>18</span><span></span><span></span><span>21</span><span></span><span></span></div>
+    <div class="legend"><span><span class="sw" style="background:var(--accent-soft);border:1px solid var(--accent)"></span>Allowed: before 10:00, 13:00 to 17:00, after 21:30</span><span><span class="sw" style="background:var(--bad-soft);border:1px solid var(--bad)"></span>Blocked (21:00 to 21:30 is also blocked)</span></div>
+    <p class="note">Confirmed in Cashfree's documentation. The last half hour before 21:30 is drawn as allowed because the band is hourly.</p>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="eyebrow">A tenant's life with Autopay</div>
+  <h2>Five moments</h2>
+  <p class="lede">Pick a moment to see what the product does there.</p>
+  <div class="steps" role="tablist" aria-label="Moments">
+    <button class="step" role="tab" aria-selected="true" data-k="0" id="st0"><span class="n">1</span><span class="l">First contact</span></button>
+    <button class="step" role="tab" aria-selected="false" data-k="1" id="st1"><span class="n">2</span><span class="l">Setting it up</span></button>
+    <button class="step" role="tab" aria-selected="false" data-k="2" id="st2"><span class="n">3</span><span class="l">Every period</span></button>
+    <button class="step" role="tab" aria-selected="false" data-k="3" id="st3"><span class="n">4</span><span class="l">When things change</span></button>
+    <button class="step" role="tab" aria-selected="false" data-k="4" id="st4"><span class="n">5</span><span class="l">Moving out</span></button>
+  </div>
+  <div class="panel detail" id="stepDetail" role="tabpanel" aria-live="polite"></div>
+  <div class="diagram"><pre class="mermaid">flowchart TD
+    subgraph Doors[&quot;Where she meets it&quot;]
+        A1[&quot;Check-in, after the agreement&quot;]
+        A2[&quot;WhatsApp from RentOk or her manager&quot;]
+        A3[&quot;Card on the tenant app home&quot;]
+        A4[&quot;Tick above Pay: pay now and turn on Autopay&quot;]
+        A5[&quot;Signing step after a rent change or renewal&quot;]
+        A6[&quot;Link sent to her parent&quot;]
+    end
+    Doors --&gt; S[&quot;One setup screen, opened at the approval step&quot;]
+    S --&gt; C{&quot;She picks one option (R46)&quot;}
+    C --&gt;|&quot;Option 1&quot;| O1[&quot;My rent, every rent period: a fixed amount&quot;]
+    C --&gt;|&quot;Option 2, recommended&quot;| O2[&quot;All my dues, when they&#x27;re due: up to her regular dues&quot;]
+    O1 --&gt; AP[&quot;Approve on RentOk&#x27;s screen: UPI app, QR code or UPI ID, bank account through Cashfree&quot;]
+    O2 --&gt; AP
+    AP --&gt; OK[&quot;Autopay is on: next three dates, change day, pause, cancel&quot;]
+    OK --&gt; M[&quot;Every period: heads-up, bank notice, debit, receipt&quot;]
+    M --&gt; M
+    M --&gt; CH{&quot;Something changes&quot;}
+    CH --&gt;|&quot;Rent or fee change&quot;| RC[&quot;Rent change flow, new approval if above her limit&quot;]
+    CH --&gt;|&quot;She asks to pause&quot;| P[&quot;Manager or owner approves, 48 hours of silence counts as yes&quot;]
+    CH --&gt;|&quot;She cancels&quot;| X[&quot;Dues show Pay now, chased again, never blocked&quot;]
+    CH --&gt;|&quot;Agreement ends&quot;| R[&quot;Renewal asks for a new approval 15 days before&quot;]
+    RC --&gt; M
+    P --&gt; M
+    R --&gt; M
+    M --&gt; OUT[&quot;Moves out: last debit, then the mandate is cancelled&quot;]</pre></div>
+</section>
+
+<section id="options">
+  <div class="eyebrow">At setup she picks one <span class="rn">R46</span></div>
+  <h2>Two options</h2>
+  <div class="opt">
+    <div class="panel">
+      <h3>Option 1: My rent, every rent period</h3>
+      <dl class="kv">
+        <dt>Mandate</dt><dd>Fixed schedule (monthly, quarterly, half-yearly or yearly). Cashfree debits it.</dd>
+        <dt>She approves</dt><dd>A fixed amount: her regular dues for the period, line by line.</dd>
+        <dt>Extra bills</dt><dd>Sent as a normal Pay now request, with an offer to switch.</dd>
+        <dt>Above ₹15,000</dt><dd>Her bank asks for her UPI PIN on every debit.</dd>
+        <dt>Pause</dt><dd>RentOk pauses it at her bank through Cashfree.</dd>
+        <dt>Retries</dt><dd>Cashfree, up to 3, an hour apart.</dd>
+      </dl>
+    </div>
+    <div class="panel" style="border-color:var(--accent)">
+      <h3>Option 2: All my dues, when they're due <span class="tag">Recommended</span></h3>
+      <dl class="kv">
+        <dt>Mandate</dt><dd>On demand ("as presented"). RentOk raises each debit.</dd>
+        <dt>She approves</dt><dd>A limit equal to her regular dues, line by line: ₹10,000 rent + ₹58 platform fee = up to ₹10,058.</dd>
+        <dt>Extra bills</dt><dd>Request payment via Autopay, paid after 24 hours unless she pays manually.</dd>
+        <dt>Above ₹15,000</dt><dd>Taken in parts of up to ₹15,000, one after another. Same day is still to confirm with Cashfree.</dd>
+        <dt>Pause</dt><dd>RentOk raises no debits.</dd>
+        <dt>Retries</dt><dd>RentOk, up to 3, timed near salary day.</dd>
+      </dl>
+    </div>
+  </div>
+  <p class="note">Regular dues: rent (with GST if charged), fixed recurring charges such as a food package, and the platform fee line. Never late fines, deposits or prepaid recharges.</p>
+</section>
+
+<section id="states">
+  <div class="eyebrow">Every state</div>
+  <h2>What an Autopay can be, and what moves it</h2>
+  <div class="chips" aria-label="Counts toward the target">
+    <span class="chip y">Counts: On</span><span class="chip y">Pause requested</span><span class="chip y">Failed, still active</span><span class="chip y">Needs new approval</span><span class="chip y">Ending soon</span>
+    <span class="chip n">Does not count: Paused</span><span class="chip n">Ended</span><span class="chip n">Cancelled</span><span class="chip n">Not set up</span><span class="chip n">Started</span><span class="chip n">Waiting for bank approval</span>
+  </div>
+  <div class="diagram"><pre class="mermaid">stateDiagram-v2
+    [*] --&gt; NotSetUp
+    NotSetUp --&gt; Started: opens setup
+    Started --&gt; NotSetUp: leaves halfway
+    Started --&gt; WaitingBank: chooses bank account (e-NACH)
+    WaitingBank --&gt; On: bank approves, 24 to 48 hours
+    Started --&gt; On: approves in her UPI app
+    On --&gt; PauseRequested: she asks to pause
+    PauseRequested --&gt; Paused: property approves, or 48 hours pass
+    PauseRequested --&gt; On: property declines
+    On --&gt; Paused: she pauses in her UPI app
+    Paused --&gt; On: pause ends or she resumes
+    On --&gt; Failed: debit fails
+    Failed --&gt; On: a retry succeeds
+    Failed --&gt; On: next period, dues sent as a link this time
+    On --&gt; NeedsApproval: her regular dues rise above her limit
+    NeedsApproval --&gt; On: she approves the new amount
+    On --&gt; EndingSoon: agreement ends within 15 days
+    EndingSoon --&gt; On: she renews
+    EndingSoon --&gt; Ended: agreement end date passes
+    On --&gt; Cancelled: she cancels, or RentOk stops it on request
+    Cancelled --&gt; Started: set up again
+    Ended --&gt; Started: set up again
+    On --&gt; [*]: she moves out
+    NotSetUp: Not set up
+    WaitingBank: Waiting for bank approval
+    PauseRequested: Pause requested
+    NeedsApproval: Needs new approval
+    EndingSoon: Ending soon</pre></div>
+</section>
+
+<section id="debit">
+  <div class="eyebrow">One debit, step by step</div>
+  <h2>Option 2 and Option 1, side by side</h2>
+  <p class="lede">Option 2 uses Cashfree's controlled flow: RentOk sends the notice, waits at least 25 hours, and takes exactly the notified amount. Option 1 runs on Cashfree's own schedule.</p>
+  <div class="grid g2">
+    <div><h3>Option 2: all dues, on demand</h3><div class="diagram"><pre class="mermaid">sequenceDiagram
+    autonumber
+    participant T as Tenant
+    participant R as RentOk
+    participant C as Cashfree
+    participant B as Her bank
+    participant M as Manager
+    R-&gt;&gt;R: Bill ready, advance and credits used first
+    R-&gt;&gt;T: WhatsApp 2 days before: amount, breakdown, check balance
+    R-&gt;&gt;C: Send notice for the exact amount (controlled flow)
+    C-&gt;&gt;B: Pre-debit notice
+    B-&gt;&gt;T: Bank notice, at least 24 hours ahead
+    Note over R,C: Wait at least 25 hours. The amount is now fixed.
+    R-&gt;&gt;C: Take the debit, in NPCI&#x27;s allowed hours
+    C-&gt;&gt;B: Debit up to 15,000 per part
+    alt Paid
+        B--&gt;&gt;C: Success
+        C--&gt;&gt;R: Payment success
+        R-&gt;&gt;T: Receipt: Paid by Autopay
+        R-&gt;&gt;M: Shows as paid
+    else Failed
+        B--&gt;&gt;C: Failed, with a reason
+        C--&gt;&gt;R: Payment failed
+        R-&gt;&gt;T: Same day: reason, Pay now, next retry
+        R-&gt;&gt;M: Alert with the reason
+        R-&gt;&gt;C: Up to 3 retries, timed near salary day
+    end
+    Note over R,C: Dues above 15,000: the next part starts after the last one, one notice at a time</pre></div></div>
+    <div><h3>Option 1: rent on a fixed schedule</h3><div class="diagram"><pre class="mermaid">sequenceDiagram
+    autonumber
+    participant T as Tenant
+    participant R as RentOk
+    participant C as Cashfree
+    participant B as Her bank
+    R-&gt;&gt;T: WhatsApp 2 days before: amount and check balance
+    C-&gt;&gt;B: Cashfree sends the notice on its schedule
+    B-&gt;&gt;T: Bank notice, at least 24 hours ahead
+    alt She already paid another way
+        R-&gt;&gt;C: Cancel this period&#x27;s debit
+        R-&gt;&gt;T: Link for anything left
+    else Normal period
+        C-&gt;&gt;B: Debit the fixed amount
+        alt Paid
+            B--&gt;&gt;C: Success
+            C--&gt;&gt;R: Payment success
+            R-&gt;&gt;T: Receipt: Paid by Autopay
+        else Failed
+            C-&gt;&gt;B: Cashfree retries up to 3 times, an hour apart
+            R-&gt;&gt;T: Reason, Pay now link
+        end
+    end
+    Note over T,B: Above 15,000 her bank asks for her UPI PIN on every debit</pre></div></div>
+  </div>
+</section>
+
+<section id="request">
+  <div class="eyebrow">Extra bills <span class="rn">R47</span> <span class="rn">R51</span></div>
+  <h2>Request payment via Autopay</h2>
+  <p class="lede">Next to Record payment and Remind to pay, on every due except late fines. There is no reject button: she approves, does nothing, or pays manually.</p>
+  <div class="diagram"><pre class="mermaid">sequenceDiagram
+    autonumber
+    participant M as Manager
+    participant R as RentOk
+    participant T as Tenant and parent
+    participant C as Cashfree
+    M-&gt;&gt;R: Request payment via Autopay on a due
+    alt Option 2 and Autopay is on
+        R-&gt;&gt;T: Requested 5,000 for electricity, paid from Autopay after 24 hours
+        alt She taps Approve now, or does nothing
+            R-&gt;&gt;C: Notice, then debit after the waiting period
+            C--&gt;&gt;R: Paid
+            R-&gt;&gt;M: Paid by Autopay
+        else She taps Pay manually
+            R-&gt;&gt;T: Pay now link
+        else Above her limit
+            R-&gt;&gt;T: Approve a new limit in her UPI app, or pay manually
+        end
+    else Option 1, paused, cancelled or not set up
+        R-&gt;&gt;T: Normal Pay now request
+    end</pre></div>
+</section>
+
+<section id="money">
+  <div class="eyebrow">Three charges, never mixed</div>
+  <h2>Where the money goes</h2>
+  <div class="charges">
+    <div class="charge"><div class="eyebrow">RentOk's service charge</div><div class="amt mono">₹49 + GST</div><p>Per billed tenant a month, charged to management whatever way the tenant pays. Taken from the payout, or invoiced monthly. <span class="rn">R22</span> <span class="rn">R35</span></p></div>
+    <div class="charge p"><div class="eyebrow">Platform fee line</div><div class="amt mono">₹58, or ₹49 + GST</div><p>The property's charge on the tenant's bill, on by default. ₹49 + GST if the property is GST-registered, ₹58 if not. Same for every payment method. <span class="rn">R42</span> <span class="rn">R43</span></p></div>
+    <div class="charge g"><div class="eyebrow">Payment gateway charges</div><div class="amt mono">as today</div><p>Card, net banking, IMPS, NEFT and similar keep their own charges. The new 0.4% UPI charge on link payments never reaches the tenant: management pays it. <span class="rn">R34</span> <span class="rn">R15</span></p></div>
+  </div>
+  <div class="diagram"><pre class="mermaid">flowchart LR
+    T[&quot;Tenant&quot;] --&gt;|&quot;Rent and bills&quot;| P[&quot;Payment via Autopay, link, card or cash&quot;]
+    T --&gt;|&quot;Platform fee line: 58, or 49 plus GST if the property is GST-registered. On by default, the property decides&quot;| P
+    T --&gt;|&quot;Gateway charge, only on card, net banking and similar methods, as today&quot;| GW[&quot;Payment gateway&quot;]
+    P --&gt; CF[&quot;Cashfree&quot;]
+    CF --&gt;|&quot;Owner&#x27;s share&quot;| O[&quot;Property or owner&quot;]
+    O --&gt;|&quot;RentOk service charge: 49 plus GST per billed tenant a month, taken from the payout&quot;| RO[&quot;RentOk&quot;]
+    O --&gt;|&quot;New 0.4% UPI charge on link payments above 2,000, from 15 Oct&quot;| CF
+    X[&quot;Autopay debit: no 0.4% UPI charge&quot;] -.-&gt; CF</pre></div>
+</section>
+
+<section id="pause">
+  <div class="eyebrow">Pause <span class="rn">R48</span> <span class="rn">R50</span></div>
+  <h2>A pause is a request the property approves</h2>
+  <p class="lede">Any length, up to her agreement end date. A pause made in her UPI app takes effect at once.</p>
+  <div class="diagram"><pre class="mermaid">flowchart TD
+    A[&quot;Tenant asks: skip next debit, or pause until a month&quot;] --&gt; B[&quot;Manager and owner alerted, status Pause requested&quot;]
+    B --&gt; H{&quot;Decision within 48 hours?&quot;}
+    H --&gt;|&quot;Approve&quot;| Y[&quot;Paused until the chosen month&quot;]
+    H --&gt;|&quot;No reply in 48 hours&quot;| Y
+    H --&gt;|&quot;Decline&quot;| N[&quot;Autopay continues, she is told&quot;]
+    Y --&gt; O1[&quot;Option 1: RentOk pauses the mandate at her bank&quot;]
+    Y --&gt; O2[&quot;Option 2: RentOk raises no debits&quot;]
+    O1 --&gt; D[&quot;Paused periods show Pay now&quot;]
+    O2 --&gt; D
+    D --&gt; E[&quot;Pause ends on its own, with a message before the next debit&quot;]
+    U[&quot;She pauses in her UPI app&quot;] --&gt; Z[&quot;Takes effect at once, the manager is told, only she can resume&quot;]</pre></div>
+</section>
+
+<section id="push">
+  <div class="eyebrow">The push to 1 Oct</div>
+  <h2>Build order, then everyone at once</h2>
+  <div class="grid g3" style="margin-bottom:6px">
+    <div class="panel stat"><b class="mono">~300,000</b><span>existing tenants not on Autopay: 30,000 to 45,000 at 10 to 15%</span></div>
+    <div class="panel stat"><b class="mono">18k to 29k</b><span>new tenants at check-in, 1,300 to 2,100 a day</span></div>
+    <div class="panel stat"><b class="mono">~18,000</b><span>online payments on the 1st: "pay now and turn on Autopay"</span></div>
+  </div>
+  <div class="diagram"><pre class="mermaid">flowchart LR
+    S1[&quot;1. Login fix for Autopay routes&quot;] --&gt; S2[&quot;2. Safe debits: double charge, paid elsewhere, empty month, move-out, debit time, allowed days&quot;]
+    S2 --&gt; S3[&quot;3. Check-in: set up later and per-tenant switch&quot;]
+    S3 --&gt; S4[&quot;4. One setup screen with two options&quot;]
+    S4 --&gt; ON[&quot;Autopay on and required for everyone&quot;]
+    S2 --&gt; MF[&quot;Money fixes before the first October debit: payouts, GST, saved amounts&quot;]
+    ON --&gt; W[&quot;Messages to every tenant not on Autopay, biggest push 30 Sep evening and 1 Oct morning&quot;]
+    W --&gt; T[&quot;Target counted at the end of 1 Oct: 70,000 to 75,000&quot;]</pre></div>
+  <div class="diagram"><pre class="mermaid">timeline
+    title Fixed dates
+    18 Sep : App release freeze
+    24 Sep : Release 36 goes public : Team offsite starts
+    27 Sep : Team offsite ends
+    30 Sep : Biggest push, evening
+    1 Oct : Platform fee starts, after notice : Target counted at end of day
+    15 Oct : New 0.4% UPI charge begins</pre></div>
+</section>
+
+<section id="who">
+  <div class="eyebrow">Roles</div>
+  <h2>Who can do what</h2>
+  <div class="filters" role="group" aria-label="Show a role">
+    <button type="button" id="f-all" data-r="all" aria-pressed="true">Everyone</button>
+    <button type="button" id="f-t" data-r="1" aria-pressed="false">Tenant</button>
+    <button type="button" id="f-p" data-r="2" aria-pressed="false">Parent</button>
+    <button type="button" id="f-m" data-r="3" aria-pressed="false">Manager</button>
+    <button type="button" id="f-o" data-r="4" aria-pressed="false">Owner</button>
+    <button type="button" id="f-s" data-r="5" aria-pressed="false">RentOk support</button>
+  </div>
+  <div class="tablewrap"><table id="who-table">
+    <thead><tr><th>Action</th><th>Tenant</th><th>Parent</th><th>Manager</th><th>Owner</th><th>RentOk support</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p class="note">"Asks RentOk" means the manager requests it and RentOk support acts. Every manager action has its own team permission and is logged.</p>
+</section>
+
+<footer>
+  Source: <span class="mono">map/feature-map.md</span> and <span class="mono">map/diagrams.md</span> in eazyapp-tech/rentok-autopay, version 3, 17 to 18 Sep 2026. Figures from RentOk's data tool on 17 Sep. Rule numbers point to the decision log. Items still open, including dues in parts on one day, are listed in <span class="mono">decisions/open-questions.md</span>.
+</footer>
+</div>
+
+<script>
+const MOMENTS=[
+ {t:"First contact",rules:["R7","R21","R27","R24"],items:[
+  "Check-in: Autopay is a required step after the agreement, with a Set up later option.",
+  "WhatsApp from RentOk, on the property's behalf; the manager is told 24 hours before and can opt the property out.",
+  "WhatsApp from the manager, to one tenant, a selection or everyone not set up.",
+  "A card on the tenant app home, which needs no app update.",
+  "A tick above Pay on every payment screen: Pay now and turn on Autopay. Never pre-ticked.",
+  "The signing step after a rent change or at renewal.",
+  "Any of these can go to her parent, who sets it up from their own account."]},
+ {t:"Setting it up",rules:["R46","R44","R41","R33"],items:[
+  "One screen, opened straight at the approval: no app install, no earlier check-in steps.",
+  "The two options side by side with her real amounts; she must pick one.",
+  "Her day, from her due day to the last grace day, with the next three debit dates.",
+  "UPI on RentOk's own screen: her UPI apps, a QR code or her UPI ID. Bank account through Cashfree's page.",
+  "Setup between 25 Sep and 1 Oct shows the October dues that the first debit will take.",
+  "Success screen: next three dates, and change day, pause and cancel as easy to find as setup."]},
+ {t:"Every period",rules:["R36","R16","R29"],items:[
+  "Advance and credits are used first, before the notice.",
+  "RentOk's WhatsApp heads-up 2 days before, with a check balance link.",
+  "The bank's notice at least 24 hours before. From then on the amount is fixed.",
+  "The debit runs only in NPCI's allowed hours; above ₹15,000 under Option 2, in parts.",
+  "Failure: she is told the same day with the reason; up to 3 retries; no late fine while retries run (proposed).",
+  "Paid another way first: the pending debit is cancelled. She is never charged twice."]},
+ {t:"When things change",rules:["R45","R48","R50","R40"],items:[
+  "Change her day: within her allowed days, once a month, from the next period.",
+  "Pause: she asks, the property approves, 48 hours of silence counts as approval.",
+  "Cancel: from the app, the payment page or her UPI app. Dues show Pay now. Chased again, never blocked.",
+  "Rent or fee change: through the rent change flow, with a new approval if her dues rise above her limit.",
+  "Renewal: the mandate ends with the agreement, so a new approval is asked 15 days before.",
+  "Transfer to another property: Autopay moves with her, under the new property's settings."]},
+ {t:"Moving out",rules:["#7005"],items:[
+  "Final settlement dues are taken as usual.",
+  "After the last debit the mandate is cancelled and she is told.",
+  "Nothing is ever debited after she leaves. Eviction, deletion and transfer out end it the same way."]}
+];
+function showStep(k){
+  document.querySelectorAll('.step').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.k==k)));
+  const m=MOMENTS[k];
+  document.getElementById('stepDetail').innerHTML='<h3>'+m.t+' '+m.rules.map(r=>'<span class="rn">'+r+'</span>').join(' ')+'</h3><ul>'+m.items.map(i=>'<li>'+i+'</li>').join('')+'</ul>';
+  try{localStorage.setItem('ap-step',k)}catch(e){}
+}
+document.querySelectorAll('.step').forEach(b=>b.addEventListener('click',()=>showStep(b.dataset.k)));
+let start=0;try{start=Number(localStorage.getItem('ap-step'))||0}catch(e){}
+showStep(start);
+
+const ROWS=[
+ ["See status, next debit, breakdown and past debits","Yes","Yes","Yes","Summary","Yes"],
+ ["Set up Autopay and pick Option 1 or 2","Yes","Yes","Sends link","Sends link","Sends link"],
+ ["Change option or bank (new approval)","Yes","Yes","No","No","No"],
+ ["Change the day, within the allowed days","Yes","Yes","On her request","No","Yes"],
+ ["Ask for a pause","Yes","Yes","Asks RentOk","No","No"],
+ ["Approve or decline a tenant's pause","No","No","Yes, 48 hours","Yes","No"],
+ ["Pause or stop at the manager's request","No","No","Asks RentOk","No","Yes"],
+ ["Cancel","Yes","Yes","Asks RentOk","No","Yes, and at move-out"],
+ ["Approve a payment request, or pay manually","Yes","Yes","No","No","No"],
+ ["Request a due through Autopay","No","No","Yes","No","No"],
+ ["Make Autopay not required for one tenant","No","No","Yes, with a reason","No","Yes"],
+ ["Make Autopay not required for the property","No","No","Yes","No","Yes"],
+ ["Platform fee line: on, off, amount","No","No","Yes","Through the manager","No"],
+ ["Send setup to one, a selection or everyone","No","No","Yes","Yes","Yes"],
+ ["Report charged wrongly","Yes","Yes","For her","No","Handles it"],
+ ["Change rent (rent change flow)","No","No","Yes","Through the manager","No"]
+];
+function cls(v){return /^No$/.test(v)?'no':(/Asks RentOk/.test(v)?'ask':'yes')}
+function renderTable(r){
+  const tb=document.querySelector('#who-table tbody');
+  const hd=document.querySelectorAll('#who-table th');
+  hd.forEach((h,i)=>{h.hidden=!(r==='all'||i===0||String(i)===r)});
+  tb.innerHTML=ROWS.map(row=>'<tr>'+row.map((c,i)=>{
+    const show=(r==='all'||i===0||String(i)===r);
+    return '<td'+(i?' class="'+cls(c)+'"':'')+(show?'':' hidden')+'>'+c+'</td>'}).join('')+'</tr>').join('');
+  document.querySelectorAll('.filters button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.r===r)));
+  try{localStorage.setItem('ap-role',r)}catch(e){}
+}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>renderTable(b.dataset.r)));
+let role='all';try{role=localStorage.getItem('ap-role')||'all'}catch(e){}
+renderTable(role);
+</script>

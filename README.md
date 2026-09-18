@@ -16,6 +16,7 @@ Read **[CLAUDE.md](CLAUDE.md)** and **[STATUS.md](STATUS.md)** first. CLAUDE.md 
 
 ## Read in this order
 
+0. **[The interactive map](https://claude.ai/artifact/UoeBeNA6YPLcd6eSA7gL94)**, or **[map/diagrams.md](map/diagrams.md)** on GitHub: the whole thing in pictures.
 1. **[map/feature-map.md](map/feature-map.md)** is the document. It covers how Autopay works for every tenant, parent, manager, owner and for RentOk, moment by moment, and what we are not building.
 2. **[decisions/decision-log.md](decisions/decision-log.md)** holds every ruling (R1 to R51), what each one replaced, the things ruled out, and the facts checked by hand.
 3. **[decisions/open-questions.md](decisions/open-questions.md)** is the list of what is still unanswered, and who can answer it.
@@ -33,6 +34,7 @@ Read **[CLAUDE.md](CLAUDE.md)** and **[STATUS.md](STATUS.md)** first. CLAUDE.md 
 | `data/` | Numbers pulled from RentOk's data tool, with the workings |
 | `sources/` | Original documents: the Finance Ministry FAQ on the new UPI charge, Kamal's plans and session handoff, the transcript of his recording, and `conversations/`, the notes from recorded discussions |
 | `handoffs/` | One record per session, so either of us can pick the work up |
+| `visuals/` | The interactive page and how to update it |
 | `scripts/` | `check-writing.py`, the writing check to run before pushing |
 
 ## Rules that shape everything
