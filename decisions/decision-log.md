@@ -158,6 +158,12 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
 - R62 (18 Sep, Sanchay) Both options ship for 1 Oct, and the build tickets plan the full scope without trimming for the deadline; engineering finds how to build it in time. If a cut is ever needed, it follows a fixed cut order: Option 1 (the fixed-schedule mandate) is cut first and Option 2 stays, because Option 2 fits every tenant and Option 1 carries the most new risk on a money path. Every build ticket carries its place in the cut order; Sanchay makes any actual cut.
 
+- R63 (19 Sep, Sanchay, after the 18 Sep meeting with Srijan) **Autopay promotion on the platform fee.** Tenants on Autopay get a recurring discount on the platform fee, for example ₹30 off a ₹50 fee, so they pay ₹20. The backend supports both forms, switchable per property: an instant discount on the bill (the first to run), and cashback or RentOk Coins after the debit. Experiments run by property, not by tenant. Conditions that keep it lawful:
+  - the platform fee stays a flat amount on every payment method, cash included, never sized as a share of rent;
+  - the discount is a promotion shown as "₹30 off with Autopay", never an extra charge on UPI link payments.
+
+  This changes N6 ("Autopay price" as a lower rent): the discount is on the platform fee, not on rent. R53's ₹58 floor would move if the fee is set at ₹50. **Open:** who funds the ₹30, RentOk or the property (recommended: RentOk, which is the merchant that saves the UPI charge).
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
