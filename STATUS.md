@@ -5,17 +5,23 @@ Update this at the end of every session. Newest entry on top.
 ## Now
 
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
-- **Rulings:** R1 to R54, in `decisions/decision-log.md`.
+- **Rulings:** R1 to R62, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
 - **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), and five points marked "(proposed)" in the map. They are listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** ten written questions, the first being whether one mandate can be debited in parts on the same day. Also in `decisions/open-questions.md`.
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** drafted for Kamal in `drafts/cashfree-email.md`, not sent.
+- **Build tickets:** 36 filed 18 Sep under epic #6846, listed in `map/build-tickets.md`, with cut ranks (R62).
 - **Not done yet:** engineering tickets from the map, mirroring into Linear (only on Sanchay's go), and linking this repo from epic #6846.
 - **Access:** public until Kamal has GitHub access, then private. Until then Kamal sends his work to Sanchay, who adds it here.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 18 Sep 2026 (night), Sanchay with Claude Code
+- Turned the map into 36 build tickets (drafted in parallel, then checked for map coverage, plain language and rulings, and against the code), filed them, and rebuilt epic #6846 with every ticket and bug nested under it.
+- Filed 7 more bugs found while drafting (#7059 to #7064, marketplace#943). Answered engineering's fee plan #7022 with the rulings.
+- Rulings R55 to R61 (decided by Claude on Sanchay's instruction), R62 (both options, full scope, cut order). Other providers' docs cross-checked (`research/psp-docs-crosscheck.md`); Cashfree email sharpened.
 
 ### 18 Sep 2026 (evening), Sanchay with Claude Code
 - Checked two older Autopay lists and the 18 Sep call with Nimit against the record (`research/older-lists-check.md`). Logged R52: one Autopay link per tenant.
