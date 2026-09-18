@@ -54,14 +54,14 @@ Comments with new evidence were added to #6816, #6817, #6825, #6829, #6835, #686
 ## Where Nimit's answers on the call were checked
 | What Nimit said | What the code shows |
 | --- | --- |
-| The payment page already gets Autopay status | No. Only the app and check-in calls look it up (#6825) |
+| Web check-in already looks up Autopay status; extract it into a shared function for the payment page | Right. The lookup is in `getCheckIn` and two app calls; the payment page's call has none yet, so the extraction is the fix (#6825) |
 | The payment mode shows which payments Autopay made | Partly. Mode 205 is shared with the payment page, bookings and the app; only the order id prefix tells them apart (#6835) |
 | An empty month does not end Autopay | That month takes no debit, but the next month is never booked (#6999) |
 | "There is a cron, we need to review" | No scheduler in the code; both debit jobs are web routes called from outside, and the old one's routes are open (#7039) |
 | The Pay button is not blocked | True today |
 | A separate Autopay grace setting exists | At property level, on manager web only. At tenant level, one number drives both the debit window and the late fine |
-| A debit can be cancelled if she pays by hand | Not today: only whole mandates can be cancelled (#7002) |
-| The terms tick is taken, only the screen hides it | It is never sent to the backend at all (#935) |
+| Not sure a queued debit is cancelled when she pays by hand; it needs to be | Right that it is not done: only whole mandates can be cancelled today, so a single-charge cancel needs Cashfree's confirmation (#7002) |
+| The terms workflow exists and needs showing on screen (he was not sure) | The checkbox exists but is commented out, and the tick is never sent to the backend. Showing it is half the fix; saving it is the other half (#935) |
 | The fee payer setting fails because no default is set | The monthly-fee dropdown never enables Save (rentokmanagerflutter#305) |
 
 ## What this changes in the plan (proposed, for the map pull request)

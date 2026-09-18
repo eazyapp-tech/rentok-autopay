@@ -43,6 +43,7 @@ A tenant counts when she has an approved, active UPI Autopay or e-NACH mandate (
 - **A paused mandate does not count** while paused, whether the pause was approved in RentOk or made in her UPI app (agreed). A pause still waiting for approval counts (proposed).
 - **The property's or tenant's "required" switch does not change the count.** Any active mandate that is not paused counts.
 - **A mandate that has reached its end date does not count** until she approves the new one.
+- **A mandate counts only if a debit is queued for it, or it is waiting for its first due** (proposed). On 18 Sep, 473 of 781 active mandates had nothing queued and would never take money.
 - **One mandate per tenant.** A parent paying for two children sets up one mandate for each. CirclePe's own bank mandates do not count.
 
 **Starting point (17 Sep): 778 current tenants.** About 470 more active mandates belong to tenants who have left; those are being cancelled (#7005). The gap is about 69,200 in 14 days, **about 4,950 a day**. Today about 5 new mandates are approved a day.
@@ -118,6 +119,8 @@ A tenant counts when she has an approved, active UPI Autopay or e-NACH mandate (
 
 - **No reminder links for dues Autopay will take** (R9). A reminder link goes out only after a debit fails, or for dues Autopay will not take.
 - **She can still pay any bill** by link, cash or any other method, whenever she wants.
+- **One Autopay link per tenant at a time** (R52). A tenant still in check-in sets it up inside check-in, and the link opens at the Autopay step. Everyone else, including a tenant who chose "Set up later", gets the payment page. Outside check-in, Autopay does not wait for KYC.
+- **A "Pay now" link after a failed debit, or for a paused month, works at least until her grace days end** (proposed). Today links expire after 7 days (#6869).
 - **The pitch:** "never miss rent, nothing to remember, no extra charge for Autopay" (R11). Nothing ever mentions the new 0.4% UPI charge.
 
 ## Charges: three separate things
@@ -141,7 +144,7 @@ These are three different charges, made by different parties for different reaso
   - If her agreement asks for a longer notice period, it starts when that period ends.
   - Until then, the property covers RentOk's charge for her.
   - RentOk sends the notice to every tenant before 1 Oct, on the property's behalf.
-- **Changing or turning it off:** goes through the same notice rule as a rent change (R13). A rise that takes a tenant above her approved limit is flagged in the preview, and she is asked for a new approval.
+- **Changing or turning it off:** a property can turn the line off, or set it anywhere from ₹58 to ₹118 a month (₹49+GST to ₹100+GST) (R53). Any change goes through the same notice rule as a rent change (R13). A rise that takes a tenant above her approved limit is flagged in the preview, and she is asked for a new approval.
 - **How it is collected** (R32):
   - As part of her regular dues, including in the Autopay debit.
   - If she pays rent in cash, the line stays open in the app and on her next bill until she pays it online.
@@ -481,6 +484,12 @@ Existing tenants are the largest source of the 69,200, reached by managers and b
 
 **A daily money check:** every debit matches a recorded payment. Cashfree does not resend missed updates [Cashfree], so RentOk also checks mandate and debit statuses directly.
 
+**Stopping debits (proposed)**
+- A RentOk-only switch that stops raising new debits, for everyone or for one property, with a record of who used it. Setup and approvals keep working.
+- A floor on first-try success. If it drops below the floor, or any tenant is debited twice for one month, setup messages pause for a review. The switch is used only if debits themselves are wrong.
+
+**The push list:** current tenants only, never tenants who have left (proposed). Messages to people who have left lower the WhatsApp number's quality rating, which sets how fast the push can go.
+
 **On call:** named people during the team offsite, 24 to 27 Sep, when most of the team is away.
 
 ## Property lifecycle
@@ -508,20 +517,35 @@ Everyone is on from the start (R37). Setup messages go to every tenant not on Au
 **What it takes.** At 10 to 15% of 300,000, existing tenants give 30,000 to 45,000. With the other sources, low estimates reach about 52,000 and high estimates about 79,000. **The target is reachable only if existing tenants, check-in and the 1 Oct payers all run at once.**
 
 **Two lanes**
-- **By 1 Oct:** the backend, the payment page, manager web, WhatsApp, and app home cards that need no app update.
+- **By 1 Oct:** the backend, the payment page (including its tracking, so each source can be counted), manager web, WhatsApp, and app home cards that need no app update.
 - **In the app release after 1 Oct** (nothing new enters the apps after the 18 Sep freeze): the manager app and tenant app screens, including "Request to pause or stop" and the pause queue.
 
 **Order.** Before Autopay is switched on and required for everyone, these must be in place, in this order (R10):
-1. **Login fix:** the Autopay routes that need no login (#6816, #6861).
+0. **How fixes are tested.** Every Autopay call to Cashfree is hardcoded to live, so there is no sandbox (#6866). Fixes are tested with real money on a few staff tenants, on small amounts, before each goes live (proposed).
+1. **Login and fake-payment fixes:**
+   - the Autopay routes that need no login (#6816, #6861);
+   - payments recorded as online without Cashfree confirming them (#7038), together with the add-payment route that needs no login (#7018). Autopay's own call to that route moves inside the server first, or Autopay stops recording payments;
+   - the old Autopay charge routes, switched off (#7039);
+   - discounts checked when a payment is recorded (#7040);
+   - Autopay's webhook checks Cashfree's signature (#7019).
 2. **Fixes that make debits safe:**
    - two engines charging twice (#6995);
    - charging a tenant who already paid (#7002);
    - one empty month ending Autopay (#6999);
    - debits after move-out (#7005);
    - the debit time sent wrong (#7004);
-   - the allowed-days window, which today is the due day plus 0 days, set to 7 grace days (R41).
+   - the allowed-days window, which today is the due day plus 0 days, set to 7 grace days (R41), with the Autopay grace kept apart from the late-fine grace (#7049);
+   - **debits that never get queued:** an empty month (#6999), a debit cancelled at Cashfree (#7045), a day change (#7046) and a pause (#7047). Then a one-time job books the next debit for every active mandate with nothing queued: 473 of 781 current tenants on 18 Sep;
+   - the failure reason saved correctly (#6817);
+   - RentOk's own heads-up message switched on for everyone, with the real amount (#7048).
    - **Before the first October debit, the money fixes:** payout deductions (#6996, #6998), dues with GST collected short (#7000), and the amount saved for each debit (#7003).
-3. **Check-in:** "Set up later" and the tenant-level switch (web check-in issue #915).
+3. **Check-in:**
+   - "Set up later" and the tenant-level switch (web check-in issue #915);
+   - setup no longer refused where the property never chose who pays the fee (#7054); this blocks turning Autopay on for everyone;
+   - an error message instead of a spinning button (#936);
+   - "complete" shown only when she approved (#937);
+   - the terms shown, ticked by her and saved (#935);
+   - every Autopay link opens at the Autopay step (#7056, R52).
 4. **Setup:** the one-screen setup with the two options.
 
 **Timing**

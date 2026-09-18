@@ -195,8 +195,8 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    S1["1. Login fix for Autopay routes"] --> S2["2. Safe debits: double charge, paid elsewhere, empty month, move-out, debit time, allowed days"]
-    S2 --> S3["3. Check-in: set up later and per-tenant switch"]
+    S0["0. Test with real money on staff tenants, no sandbox"] --> S1["1. Login and fake-payment fixes"] --> S2["2. Safe debits: double charge, paid elsewhere, debits never queued plus backfill, move-out, debit time, allowed days"]
+    S2 --> S3["3. Check-in: set up later, per-tenant switch, fee payer fix, honest success, terms"]
     S3 --> S4["4. One setup screen with two options"]
     S4 --> ON["Autopay on and required for everyone"]
     S2 --> MF["Money fixes before the first October debit: payouts, GST, saved amounts"]

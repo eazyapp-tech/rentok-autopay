@@ -143,6 +143,8 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
 - R52 (18 Sep, Sanchay on the call with Nimit) One Autopay link per tenant at a time. A new tenant still in check-in sets Autopay up inside check-in, and the check-in link opens at the Autopay step. Everyone else, including a tenant who chose "Set up later", gets the payment page as the Autopay link. Outside check-in, Autopay does not wait for KYC.
 
+- R53 (18 Sep, Sanchay on the call with Nimit, amounts confirmed in chat) A property can turn the platform fee line off, or set it anywhere from ₹58 to ₹118 a month (₹49+GST to ₹100+GST). The floor stops the line suggesting RentOk costs less than it does. Above the ceiling, the change is really a rent rise and goes through the rent change flow.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
