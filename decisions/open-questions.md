@@ -14,10 +14,9 @@ These follow from his rulings, and are marked "(proposed)" in the feature map.
 | 4 | While a pause request is pending, her next debit is held | Otherwise a request made a day before her debit is pointless |
 | 5 | A tenant can pause or cancel a mandate her parent set up, and the parent is told | Parents can be the payer |
 | 6 | What a tenant of a whitelabelled property (19.5% of tenants, #6883) sees on the setup screen and in messages: her property's brand or RentOk's | A monthly debit asked for by a name she does not know is more likely to be abandoned or disputed |
-| 7 | A mandate counts only if a debit is queued for it, or it is waiting for its first due | 473 of 781 active mandates had nothing queued on 18 Sep |
-| 8 | "Pay now" links after a failed or paused month work at least until her grace days end, and the push list holds current tenants only | Links die after 7 days; messages to departed tenants lower the WhatsApp rating |
-| 9 | Fixes are tested with real money on a few staff tenants, on small amounts | There is no sandbox for Autopay (#6866) |
-| 10 | A RentOk-only switch that stops all debits, or one property's, and a floor on first-try success that pauses setup messages | There is no way to stop debits today if something goes wrong at scale |
+| 7 | "Pay now" links after a failed or paused month work at least until her grace days end, and the push list holds current tenants only | Links die after 7 days; messages to departed tenants lower the WhatsApp rating |
+| 8 | Fixes are tested with real money on a few staff tenants, on small amounts | There is no sandbox for Autopay (#6866) |
+| 9 | A RentOk-only switch that stops all debits, or one property's, and a floor on first-try success that pauses setup messages | There is no way to stop debits today if something goes wrong at scale |
 
 ## 2. Waiting on Cashfree
 

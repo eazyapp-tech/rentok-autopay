@@ -43,7 +43,7 @@ A tenant counts when she has an approved, active UPI Autopay or e-NACH mandate (
 - **A paused mandate does not count** while paused, whether the pause was approved in RentOk or made in her UPI app (agreed). A pause still waiting for approval counts (proposed).
 - **The property's or tenant's "required" switch does not change the count.** Any active mandate that is not paused counts.
 - **A mandate that has reached its end date does not count** until she approves the new one.
-- **A mandate counts only if a debit is queued for it, or it is waiting for its first due** (proposed). On 18 Sep, 473 of 781 active mandates had nothing queued and would never take money.
+- **A mandate counts only if a debit is queued for it, or it is waiting for its first due** (R54). On 18 Sep, 473 of 781 active mandates had nothing queued and would never take money.
 - **One mandate per tenant.** A parent paying for two children sets up one mandate for each. CirclePe's own bank mandates do not count.
 
 **Starting point (17 Sep): 778 current tenants.** About 470 more active mandates belong to tenants who have left; those are being cancelled (#7005). The gap is about 69,200 in 14 days, **about 4,950 a day**. Today about 5 new mandates are approved a day.

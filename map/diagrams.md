@@ -70,7 +70,7 @@ stateDiagram-v2
     EndingSoon: Ending soon
 ```
 
-Counts toward the target: On, Pause requested, Failed (still active), Needs new approval, Ending soon. Does not count: Paused, Ended, Cancelled, Not set up, Started, Waiting for bank approval.
+Counts toward the target (R54: only while a debit is queued or her first due is still to come): On, Pause requested, Failed (still active), Needs new approval, Ending soon. Does not count: Paused, Ended, Cancelled, Not set up, Started, Waiting for bank approval.
 
 ## 3a. One debit, Option 2 (all dues, on demand)
 
