@@ -156,6 +156,8 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - R60 Outside check-in, the setup screen has one terms tick she sets herself, saved with the terms version and time, the same as check-in (#935).
   - R61 The property-level "Autopay off" switch is removed; only "required" can be turned off, and existing mandates keep running (settles #7055).
 
+- R62 (18 Sep, Sanchay) Both options ship for 1 Oct, and the build tickets plan the full scope without trimming for the deadline; engineering finds how to build it in time. If a cut is ever needed, it follows a fixed cut order: Option 1 (the fixed-schedule mandate) is cut first and Option 2 stays, because Option 2 fits every tenant and Option 1 carries the most new risk on a money path. Every build ticket carries its place in the cut order; Sanchay makes any actual cut.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
