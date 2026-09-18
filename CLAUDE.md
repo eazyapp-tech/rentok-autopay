@@ -24,6 +24,7 @@ Do all four, before the session ends:
 - The repo is public for a short while, because Kamal does not have GitHub access yet.
 - Until he does, he sends his changes and new work to Sanchay. Sanchay's session adds them here, with Kamal named in the commit message and in STATUS.md.
 - Once Kamal has an account, he is added with write access and the repo goes private again. Until then, treat everything written here as public.
+- Material that cannot be public (full code-check reports, ticket drafts) is in the private repo eazyapp-tech/rentok-autopay-internal. When this repo goes private, move it in (its README says where) and archive that repo.
 
 ## Who decides what
 
@@ -58,6 +59,7 @@ This repo is public. Before adding anything, check that it holds no personal fin
 ## Where things live outside this repo
 
 - **Code:** `eazyapp-tech/rentok-backend`, `eazyapp-tech/eazypg-marketplace`, the manager app, manager web and the tenant app.
-- **Issues:** the Autopay epic is rentok-backend#6846.
+- **Issues:** the Autopay epic is rentok-backend#6846. It holds the 36 build tickets as sub-issues (`map/build-tickets.md`), with each bug under the ticket it blocks.
+- **Private material:** eazyapp-tech/rentok-autopay-internal.
 - **Designs:** the two Figma files linked in the README.
 - **The published page** of the merged conversation timeline, linked in the README.
