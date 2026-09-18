@@ -11,7 +11,7 @@ This map sets out how Autopay works for every tenant, parent, manager, owner and
 
 The full record is `05-inventory.md` in this folder. Cashfree answers are in `19-cashfree-docs-answers.md`.
 
-*Version 3, 17 Sep 2026. Owner: Sanchay.*
+*Version 4, 18 Sep 2026. Owner: Sanchay.*
 
 **Words used in this map**
 - **Mandate:** the standing permission a tenant approves once. For UPI Autopay it is approved in her UPI app. For a bank-account mandate (**e-NACH**) it is approved with her bank. It lets RentOk take money on her day.
