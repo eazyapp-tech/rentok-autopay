@@ -162,6 +162,12 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - the platform fee stays a flat amount on every payment method, cash included, never sized as a share of rent;
   - the discount is a promotion shown as "₹30 off with Autopay", never an extra charge on UPI link payments.
 
+  **Four conditions added 22 Sep, after the check on whether a discount is lawful where a charge is not** (the reasoning and sources are in `discount-route.md` in the private repo, meetings folder for 18 Sep):
+  - **the posted fee is real:** a tenant paying cash pays the same fee, and that is what proves the price is not a UPI price;
+  - **nothing about the fee is worked out from the payment:** no share of rent, no 0.4% plus tax, no band that rises with rent. This kills the instruction to owners to set the fee at "about 0.5% of average rent";
+  - **the discount is for the mandate and open to everyone:** any tenant, any UPI app, any bank, or e-NACH. Never tied to one app;
+  - **no wording anywhere prices UPI:** "Save ₹30 with Autopay" is fine. "UPI costs 0.5% more", "MDR charges on UPI" and "flat ₹15 or ₹20 charge on rent payment" are not, and the last one is separately banned by the RBI rule that no charge may be levied on a customer for using a mandate. This applies to the product, the owner screens and our own internal documents.
+
   This changes N6 ("Autopay price" as a lower rent): the discount is on the platform fee, not on rent. R53's ₹58 floor would move if the fee is set at ₹50. **Open:** who funds the ₹30, RentOk or the property (recommended: RentOk, which is the merchant that saves the UPI charge).
 
 ## Issues filed today (rentok-backend)
