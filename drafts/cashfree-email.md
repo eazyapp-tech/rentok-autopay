@@ -29,9 +29,12 @@ We use PG Subscriptions (`/pg/subscriptions`), mostly ON_DEMAND plans with the c
 4. **The first payment at setup.**
    - Can the authorisation amount be the tenant's real first payment, kept rather than refunded (`authorization_amount_refund: false`)?
    - RBI allows the first debit with registration. Is there an upper limit on this amount, and does it count as a mandate transaction (no new 0.4% UPI charge from 15 Oct)?
-5. **The merchant name.**
-   - What name does the tenant see in her UPI app and in her bank's pre-debit notice?
-   - Can it carry the property's name? About 20% of our properties use their own brand.
+5. **The name and logo the tenant sees, and whitelisting brands under one merchant id.**
+   - What name does the tenant see in her UPI app at approval, and in her bank's pre-debit notice, and where is each one set?
+   - We understand additional brand names and logos can be whitelisted under a single merchant id, after verification. Is that right, and does it apply to UPI Autopay approval and the bank notice, or only to the hosted checkout page?
+   - What do you need from us per brand, how long does approval take, and is there a limit on how many?
+   - Can the name be chosen per mandate at creation, or is it fixed per whitelisted brand?
+   - This is urgent for us. About 20% of our tenants belong to properties trading under their own brand. They have never seen our name, and 790 of our last 1,037 failed setups are tenants who opened their UPI app and did not approve.
 6. **Opening the tenant's UPI app directly.**
    - We want our own approval screen with deep links to UPI apps (the `/pg/subscriptions/pay` flow with `channel` link, qrcode or collect).
    - Anything we should know for iOS and for desktop?
