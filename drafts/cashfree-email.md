@@ -4,7 +4,7 @@ Status: draft, 18 Sep 2026, sharpened the same day with other providers' docs (`
 
 ---
 
-**Subject:** RentOk: 12 questions on Subscriptions (UPI Autopay and e-NACH) before our 1 Oct rollout
+**Subject:** RentOk: questions on Subscriptions and on UPI charges, before our 1 Oct rollout
 
 Hi [name],
 
@@ -59,6 +59,20 @@ We use PG Subscriptions (`/pg/subscriptions`), mostly ON_DEMAND plans with the c
 
 - Is the "as presented" mandate type limited by merchant category? Does anything specific apply to rent?
 - How does each of our flows settle today: payment links, subscriptions, instant settlement and virtual accounts? What do we need so money settles to owners as KYC-verified vendors?
+
+**Charges and the UPI MDR, added 22 Sep**
+
+These five decide our pricing, and a verbal answer will not be enough. We need each one answered in writing, with the clause or circular it rests on. Asking "can we charge a convenience fee" will get a yes about the product feature and tell us nothing, so each question is put as narrowly as we can.
+
+1. **The specific case.** From 15 October, on a UPI payment from a customer's bank account above ₹2,000, through our own merchant account, may RentOk add a separate fee shown to the payer on the checkout page, where that fee is not charged on other payment methods? Please answer yes or no, and name the rule.
+2. **The router setting.** Your router has a convenience fee or TDR setting. On which payment methods may we lawfully switch it on from 15 October? Specifically, does it stay allowed on bank-account UPI, on UPI credit line and RuPay credit card on UPI, on cards, and on net banking?
+3. **Your terms.** Your merchant terms say "You shall not discriminate against any specific Payment Instrument", and also that promoting a specific payment instrument is not discrimination. If we charge the same flat platform fee on every method, cash included, and give a discount on that fee to customers who set up a mandate, do you treat that as promotion, which is allowed, or as discrimination, which is not?
+4. **Enforcement.** If a merchant does put a fee on UPI only, what does Cashfree do, and over what timescale? We are asking about suspension of settlement or of the account, not about a penalty.
+5. **Our category and rate.** Which merchant category code is our account on, and what MDR applies to it from 15 October? Rent collection is 6513 as far as we know. Separately, where we collect electricity charges from tenants on behalf of owners, does that fall in the utilities category, which carries the flat ₹5, or does our own category decide it?
+
+**One more on mandates**
+
+- The one-time mandate: can a mandate be created and its first debit taken in the same step, and what does the customer approve?
 
 Thanks,
 Kamal
