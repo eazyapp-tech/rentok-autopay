@@ -20,6 +20,17 @@ Update this at the end of every session. Newest entry on top.
 
 ## Log
 
+### 23 Sep 2026 (the ₹15,000 tail, re-checked), Sanchay with Claude Code
+
+- Sanchay: rent above ₹15,000 is handled by taking the mandate at the full amount and running several debits a short gap apart, the gap being a variable. He asked how that had been missed, and what else had.
+- **It was not missed as a design.** R16 rules it, the feature map carries it, diagram and ticket B1 (#7078) build it, and Kamal's payment page prototype ships it in code (`DEBIT_CAP = 15000`, a `debitParts()` function, and tenant copy reading "taken as ₹15,000 + ₹5,000, minutes apart"). **Four things around it were wrong or missing:**
+  1. **R16's own text still said the mandate carries a "₹15,000 limit".** R46 replaced that the same evening: the limit equals her full regular dues, and it is each debit that stops at ₹15,000. R16 is now annotated, not rewritten. Anyone building from R16 alone would have built the wrong mandate.
+  2. **The gap between parts was in no document of ours.** The launch room says five minutes, Sanchay says two and calls it a variable. Now in the feature map and on #7078, as a setting rather than a hardcoded wait.
+  3. **AFA and 2FA are not enabled on RentOk's Cashfree account,** so nothing above ₹15,000 reaches Autopay there today. Found on 22 Sep and written into `research/kamal-launch-room-check.md`, then left there: no open question, no Cashfree question, no ticket. Now Cashfree question 11, marked blocking, and on #7078.
+  4. **Calling open question 24 "half the prize" was wrong**, and is corrected in the log above. It read as though high rent were not automated. It is. That question picks the cheaper rail for the segment, it does not unblock it.
+- **The pattern worth keeping:** a finding written once into a research file and never carried into an open question, a ticket or the map does not exist. Three of the four above are that same failure, not four separate ones.
+- One divergence surfaced that had never been named: **our map defaults the parts to one a day** pending Cashfree, while Kamal's launch room and prototype both design for the same day, minutes apart. Both positions are now in the map with what each depends on.
+
 ### 22 Sep 2026 (R66, the eligibility control), Sanchay with Claude Code
 - **R66: the "Eligible for tenants joined since" control is removed.** It is on both manager surfaces, saves a date, writes an activity log line, and no Autopay path reads it. Filed as rentok-backend#7162. Open question 29 closed.
 - Checked every consumer before recording the removal: it is in the manager app as well as manager web, and **the app's copy-to-properties action copies the date to every property in the copy**, so one wrong date spreads.
@@ -65,7 +76,7 @@ Update this at the end of every session. Newest entry on top.
 ### 22 Sep 2026 (late, second pass), Sanchay with Claude Code
 - Re-checked Kamal's three earlier documents in `research/kamal-earlier-material-check.md`: the plan in both versions, the context handoff, and the flows page. The first check of them was made against R1 to R18 and there are now 63 rulings, so five of its own conclusions had gone stale.
 - **Measured the figure the whole project is sized on.** Both of Kamal's documents say about ₹75 lakh a year of UPI charge exposure on ₹150 crore of annual rent. August's UPI volume alone was ₹140.7 crore, and the annual exposure is about ₹6.6 crore. Workings in the private repo; open question 27 takes it to Srijan and Kamal.
-- Sized the ₹15,000 segment for the first time: 15.7% of billed tenants, carrying 48.7% of the charge. That makes open question 24, e-NACH above ₹15,000, about half the prize.
+- Sized the ₹15,000 segment for the first time: 15.7% of billed tenants, carrying 48.7% of the charge. That is the segment open question 24 is about. **Corrected 23 Sep: calling it "half the prize" was wrong**, because it read as though high rent were not automated. It is. R16 splits it into parts of up to ₹15,000 on one mandate, the map and ticket B1 carry it, and Kamal's prototype ships it. Open question 24 chooses the cheaper rail for that segment, it does not unblock it.
 - The saved copy of the flows page is a dead shell with no content in it. The text in `sources/` is the only record of that page.
 
 ### 22 Sep 2026 (late), Sanchay with Claude Code
