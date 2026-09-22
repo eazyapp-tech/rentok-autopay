@@ -9,7 +9,8 @@ to touch, and what is still waiting on a person.**
 
 Code was read on `rentok-backend` origin/master, `rentokmanagerflutter` origin/main and
 `rentok-manager-web` origin/main, 21 and 22 September 2026. Production figures were run on those
-dates. Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)** waiting on his yes.
+dates. **Checked against rulings R1 to R63, R64 pending.** Markers follow the repo: **(agreed)**
+confirmed by Sanchay, **(proposed)** waiting on his yes.
 
 ---
 
@@ -267,7 +268,9 @@ every method including cash, borne by the tenant by default, and the manager may
 amount is suggested from the property's average rent** (Sanchay, 22 Sep): ₹58 is a placeholder that
 suits a median property, and a property whose tenants pay ₹1,00,000 does not get the same figure as
 one whose tenants pay ₹8,000. The sheet suggests, the property sets, and the fee is then fixed
-rupees on her bill every month whatever she does.
+rupees on her bill every month whatever she does. **This is R64**, his ruling of 22 September, and
+it is still not in `decisions/decision-log.md`; it is recorded here and in the other four surface
+documents until he adds it or confirms that R35 and R63 already cover it.
 
 **The one thing that must not happen is the arithmetic, not the scaling.** A ladder of published
 prices by rent band is ordinary pricing. A rule that computes the fee as 0.5% of rent, chosen

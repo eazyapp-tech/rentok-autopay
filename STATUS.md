@@ -15,9 +15,14 @@ Update this at the end of every session. Newest entry on top.
 - **Not done yet:** engineering tickets from the map, and linking this repo from epic #6846. Linear mirroring is done: project Autopay, 7 parents and 57 sub-issues, 21 Sep.
 - **Surface documents: all five are written** (22 Sep): `surfaces/manager-app.md`, `surfaces/payment-page.md`, `surfaces/tenant-app.md`, `surfaces/web-check-in.md` and `surfaces/manager-web.md`.
 - **Access:** public until Kamal has GitHub access, then private. Until then Kamal sends his work to Sanchay, who adds it here.
+- **Next step:** take the corrected UPI charge sizing to Srijan and Kamal (open question 27) before the provider terms are settled. Then the dated work: the payment page link move by 25 Sep (R55), and the six web check-in fixes before D4 turns Autopay on by default.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (session close), Sanchay with Claude Code
+- **All five surface documents are written**, 1,654 lines: manager app, payment page, tenant app, web check-in, manager web. Handoff in `handoffs/2026-09-22-all-five-surfaces.md`.
+- Close-out check across the five found two drifts and fixed both: three documents were missing the ruling range they were checked against, and the manager app document had lost its record of R64 in an edit earlier the same evening. All five now carry both.
 
 ### 22 Sep 2026 (late, fifth pass), Sanchay with Claude Code
 - Wrote `surfaces/manager-web.md`, the fifth and last surface. **All five surfaces are now written.**
