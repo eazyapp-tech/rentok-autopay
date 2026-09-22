@@ -18,6 +18,18 @@ These follow from his rulings, and are marked "(proposed)" in the feature map.
 | 8 | Fixes are tested with real money on a few staff tenants, on small amounts | There is no sandbox for Autopay (#6866) |
 | 9 | A RentOk-only switch that stops all debits, or one property's, and a floor on first-try success that pauses setup messages | There is no way to stop debits today if something goes wrong at scale |
 
+| 10 | "Started" means she opened setup or began an approval without approving it | Decides who the Autopay list chases again, and who it leaves alone |
+| 11 | The Autopay rate is tenants counted over current tenants, once each, CirclePe out, "not required" in | The list's own count and the daily target number must agree or managers stop trusting both |
+| 12 | An active mandate with nothing queued shows "Failed: no debit booked" and is not counted | 473 of 781 current Autopay tenants had no debit queued on 18 Sep. Today they read as On |
+| 13 | When two statuses apply, show Failed, then Needs new approval, Pause requested, Waiting on RentOk, Ending soon, then the rest | Every row in the Autopay list depends on it, and states overlap constantly |
+| 14 | App-only managers get a daily WhatsApp link to the Autopay list during the push | The manager screens ship on web first, so without it they cannot act at all until the app release |
+| 15 | A manager's send and RentOk's send share the one-a-day setup limit | Otherwise a tenant can get two setup messages on the same day from two directions |
+| 16 | The property opt-out stops only RentOk's own sends, not the manager's | A manager who opted the property out still needs to be able to message her own tenants |
+| 17 | Alerts with a clock fire at once (pause request, all retries failed, cancellation); the rest arrive in one 09:00 summary | Decides whether a manager is interrupted nine times a day or once |
+| 18 | On day one, account owners and admins get all ten Autopay permissions; other members get "view the Autopay list" and "send setup" only if they already have "View Dues, Collection & Send Reminders" | Ten new switches default to off would leave every team unable to act on 1 Oct |
+
+Items 10 to 18 were added on 22 Sep 2026 from the manager build tickets D1, D2 and D3, where they were recorded as proposals and would not have been seen here.
+
 ## 2. Waiting on Cashfree
 
 Ask these in one written message. The first is the largest: the plan for dues above ₹15,000 rests on it.
