@@ -7,7 +7,7 @@ Update this at the end of every session. Newest entry on top.
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
 - **Rulings:** R1 to R62, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 26, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, and from the 23-section check of his launch room**. All listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 27, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
@@ -18,6 +18,12 @@ Update this at the end of every session. Newest entry on top.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (late, second pass), Sanchay with Claude Code
+- Re-checked Kamal's three earlier documents in `research/kamal-earlier-material-check.md`: the plan in both versions, the context handoff, and the flows page. The first check of them was made against R1 to R18 and there are now 63 rulings, so five of its own conclusions had gone stale.
+- **Measured the figure the whole project is sized on.** Both of Kamal's documents say about ₹75 lakh a year of UPI charge exposure on ₹150 crore of annual rent. August's UPI volume alone was ₹140.7 crore, and the annual exposure is about ₹6.6 crore. Workings in the private repo; open question 27 takes it to Srijan and Kamal.
+- Sized the ₹15,000 segment for the first time: 15.7% of billed tenants, carrying 48.7% of the charge. That makes open question 24, e-NACH above ₹15,000, about half the prize.
+- The saved copy of the flows page is a dead shell with no content in it. The text in `sources/` is the only record of that page.
 
 ### 22 Sep 2026 (late), Sanchay with Claude Code
 - Checked **all 23 sections** of Kamal's launch room against the rulings, in `research/kamal-launch-room-check.md`. The payment page document had used six of them; the other seventeen had been read but never diffed.
