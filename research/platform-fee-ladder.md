@@ -11,7 +11,26 @@ Kamal's launch room parks the whole fee question, so it says nothing either way.
 This file measures the portfolio so the ladder is built from what is there rather than invented,
 and separates the part that is ordinary pricing from the one part that is not.
 
-Checked against rulings R1 to R63, R64 pending. Figures from production on 22 September 2026.
+Checked against rulings R1 to R65. Figures from production on 22 September 2026.
+
+---
+
+## Answered, 22 September: R65
+
+**The ladder runs from ₹58 to ₹399, and both ends are suggestions.** Management may set any amount
+above ₹399 or below ₹58. R53's hard band of ₹58 to ₹118 is replaced.
+
+The floor holds at ₹58, which was the recommendation, and the ceiling goes to the top rung rather
+than R53's ₹118, which was also the recommendation. What Sanchay added is the part I had not
+proposed: **neither end binds.** A property that wants to charge ₹30 and absorb the rest, or ₹1,200
+on a ₹1,00,000 rent, may do so.
+
+Two consequences, written out in R65: below ₹58 the property is absorbing part of RentOk's ₹49 plus
+GST, which costs RentOk nothing and makes absorbing continuous instead of on or off; and above ₹399
+the only requirement is the notice rule that applies to every change anyway (R13).
+
+Everything below is the working that led there. The ladder table is the suggested ladder, not a
+limit.
 
 ---
 
@@ -34,7 +53,7 @@ average was ₹3.3 crore without the filter.
 
 ## The ceiling is a real problem, and the floor is a bigger one
 
-**R53 sets the line between ₹58 and ₹118.** Against the table above:
+**R53 set the line between ₹58 and ₹118**, before R65 replaced it. Against the table above:
 
 - **Above the ceiling: 5.7% of tenants**, about 20,000 people at 1,646 properties, sit at
   properties where 0.5% of average rent is more than ₹118. At the top band it is ₹933, eight times
@@ -78,10 +97,10 @@ So the rule is narrow: **a ladder, never a rate.**
 - The fee stays identical on every payment method including cash, which is what proves it is a
   price and not a payment charge (R63's first condition).
 
-## A ladder, proposed
+## The ladder
 
-Built from the bands above, one step per band, round numbers, no arithmetic from rent. This is a
-proposal, not a ruling.
+Built from the bands above, one step per band, round numbers, no arithmetic from rent. **Ruled as
+R65 on 22 September; both ends are suggestions and management may set any amount outside them.**
 
 | Average rent at the property | Suggested Platform fee | Share of tenants |
 | --- | --- | --- |
@@ -97,7 +116,7 @@ The manager sees the step for his property, can move up or down the ladder, and 
 off and absorb RentOk's charge instead. The rungs are round numbers a person would choose, and none
 of them is 0.5% of anything.
 
-**Two things this needs from Sanchay**, and neither is a legal question:
+**The two questions this answered**, kept for the record:
 
 1. **Does the floor move below ₹58?** R53 set ₹58 so the line never suggests RentOk costs less than
    it does. The ladder above breaks that on the bottom two rungs, which is 57.6% of tenants. Holding

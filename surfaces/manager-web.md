@@ -9,7 +9,7 @@ repeating it.
 to touch, and what is still waiting on a person.**
 
 Code was read on `rentok-manager-web` origin/main `5311f662`, `rentokmanagerflutter` origin/main and
-`rentok-backend` origin/master `1498fcd62`, all on 22 September 2026. **Checked against rulings R1 to R64.** Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)**
+`rentok-backend` origin/master `1498fcd62`, all on 22 September 2026. **Checked against rulings R1 to R65.** Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)**
 waiting on his yes.
 
 This is the last of the five surface documents. The others are `manager-app.md`, `payment-page.md`,

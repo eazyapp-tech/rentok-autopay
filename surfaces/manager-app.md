@@ -9,7 +9,7 @@ to touch, and what is still waiting on a person.**
 
 Code was read on `rentok-backend` origin/master, `rentokmanagerflutter` origin/main and
 `rentok-manager-web` origin/main, 21 and 22 September 2026. Production figures were run on those
-dates. **Checked against rulings R1 to R64.** Markers follow the repo: **(agreed)**
+dates. **Checked against rulings R1 to R65.** Markers follow the repo: **(agreed)**
 confirmed by Sanchay, **(proposed)** waiting on his yes.
 
 ---

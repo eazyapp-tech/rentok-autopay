@@ -186,6 +186,22 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   **Still open:** the two numbers in the ladder, its floor and its ceiling, are open question 28, with a proposal and the portfolio bands in `research/platform-fee-ladder.md`.
 
+- R65 (22 Sep, Sanchay, answering open question 28) **The Platform fee ladder, and its ends are suggestions.**
+
+  **The ladder runs from ₹58 to ₹399**, suggested by the property's average rent, with the rungs and the portfolio bands in `research/platform-fee-ladder.md`.
+
+  **Management can set any amount above ₹399 or below ₹58.** The two ends are where the suggestion stops, not where the setting stops.
+
+  **This replaces the hard band in R53**, which allowed ₹58 to ₹118 and nothing outside it.
+
+  **Below ₹58, the property is absorbing part of RentOk's charge.** RentOk still charges management ₹49 plus GST per billed tenant (R22, R35), so a property that sets ₹30 is passing on ₹30 and paying ₹28 itself. This makes absorbing continuous rather than the on or off choice it was, and it costs RentOk nothing, because RentOk's charge does not change.
+
+  **Above ₹399, nothing extra is required beyond the notice rule.** R53 said a change above the ceiling was really a rent rise and went through the rent change flow; with no hard ceiling that escalation has nothing to trigger on, so it goes. **What survives from R53 and applies to every change, up or down: notice is delivered and recorded before the new amount starts (R13), and a rise that takes a tenant above her approved limit is flagged in the preview and she is asked to approve again.** (The removal of the escalation is Claude's reading of the ruling, not Sanchay's words.)
+
+  **What keeps the fee lawful is not the band, and never was.** Three things do, and all of them are untouched: the fee is the same on every payment method including cash (R15, R63's first condition); it is never computed from the payment (R63's second condition as corrected on 22 Sep); and nothing anywhere prices UPI (R63's fourth condition). A manager typing his own figure is his pricing decision. What RentOk must never do is suggest a figure worked out from a share of rent.
+
+  **Recommended guardrail, not ruled:** when a manager sets an amount well outside the ladder, show a plain warning that his tenants see it on every bill and that it needs notice before it starts. **It must not show the amount as a share of rent**, which is the arithmetic R63's second condition forbids.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
