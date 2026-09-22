@@ -153,7 +153,7 @@ does not: which app it lives in, and what is already wrong there.
 | Tenant profile section | Both | D1 | Web has no Autopay on the tenant profile at all, so the app and web disagree about what a manager can see |
 | Virtual account card | Both | none | No states written. It is Cashfree's account in Cashfree's escrow, never RentOk's own |
 | Tenant list | Both | D1 | Neither app shows a badge on the row today. Filter codes 402 and 403 match exactly across both |
-| Passbook | App only | none | Web has no passbook |
+| Passbook | Both | none | Web's passbook has no per-tenant late fine or grace; the app's does. Corrected 22 Sep |
 | Late Fine sheet | App only | S2, #7049 | **No visible change until the backend grace split lands.** See section 5 |
 | Record payment | Both | B4 | Today's protection is an accident, not a guard. See section 5 |
 | Remind to pay | Both | E1, B3 | Hidden for dues Autopay will collect (R9) |

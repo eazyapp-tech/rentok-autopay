@@ -7,17 +7,25 @@ Update this at the end of every session. Newest entry on top.
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
 - **Rulings:** R1 to R62, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 28, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 29, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
 - **Build tickets:** 36 filed 18 Sep under epic #6846, listed in `map/build-tickets.md`, with cut ranks (R62).
 - **Not done yet:** engineering tickets from the map, and linking this repo from epic #6846. Linear mirroring is done: project Autopay, 7 parents and 57 sub-issues, 21 Sep.
-- **Surface documents:** `surfaces/manager-app.md`, `surfaces/payment-page.md`, `surfaces/tenant-app.md` and `surfaces/web-check-in.md` (all 22 Sep). Manager web is the last one left.
+- **Surface documents: all five are written** (22 Sep): `surfaces/manager-app.md`, `surfaces/payment-page.md`, `surfaces/tenant-app.md`, `surfaces/web-check-in.md` and `surfaces/manager-web.md`.
 - **Access:** public until Kamal has GitHub access, then private. Until then Kamal sends his work to Sanchay, who adds it here.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (late, fifth pass), Sanchay with Claude Code
+- Wrote `surfaces/manager-web.md`, the fifth and last surface. **All five surfaces are now written.**
+- **The one rule: manager web is the only manager surface that can ship before 1 Oct, and it holds the least Autopay of any of them.** Two files in the whole repository. It is behind the manager app, which at least has a per-tenant row and the per-tenant grace.
+- The old charge model is still on screen there and still being sold to owners: a setup fee, a monthly fee, two "who bears it" dropdowns with **RentOk as the unset default**, and an illustrated modal with a struck-out price. R11, R35 and R61 deleted all of it, and the same fields are what refuse setup under #7054.
+- An Autopay debit shows as "RentOk Bank Transfer" in the passbook, so no screen on web can tell it from a link payment. The display exists; the data does not (#6835).
+- Found a control nobody has ruled on: "Eligible for tenants joined since". It saves a date and writes an activity log line, and **no Autopay path reads it.** Open question 29.
+- Corrected a row in `surfaces/manager-app.md`: manager web does have a passbook; what it lacks is the per-tenant late fine and grace.
 
 ### 22 Sep 2026 (late, fourth pass), Sanchay with Claude Code
 - Wrote `surfaces/web-check-in.md`, the fourth surface, pointing at A3 with A1, A4, A9, D4, D5, E5 and S1.
