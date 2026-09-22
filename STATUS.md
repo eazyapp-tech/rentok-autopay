@@ -13,11 +13,18 @@ Update this at the end of every session. Newest entry on top.
 - **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
 - **Build tickets:** 36 filed 18 Sep under epic #6846, listed in `map/build-tickets.md`, with cut ranks (R62).
 - **Not done yet:** engineering tickets from the map, and linking this repo from epic #6846. Linear mirroring is done: project Autopay, 7 parents and 57 sub-issues, 21 Sep.
-- **Surface documents:** `surfaces/manager-app.md`, `surfaces/payment-page.md` and `surfaces/tenant-app.md` (all 22 Sep). Manager web and web check-in are left.
+- **Surface documents:** `surfaces/manager-app.md`, `surfaces/payment-page.md`, `surfaces/tenant-app.md` and `surfaces/web-check-in.md` (all 22 Sep). Manager web is the last one left.
 - **Access:** public until Kamal has GitHub access, then private. Until then Kamal sends his work to Sanchay, who adds it here.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (late, fourth pass), Sanchay with Claude Code
+- Wrote `surfaces/web-check-in.md`, the fourth surface, pointing at A3 with A1, A4, A9, D4, D5, E5 and S1.
+- **The one rule for this surface: it is the only place a tenant can be blocked, and today it blocks.** The forward gate passes only on an active mandate, against R21.
+- **The finding that sets the ship order:** the Autopay step reaches 0.51% of properties today (438 of 85,591), so six open defects reach almost nobody. D4's default-on takes them to every check-in at once, and August ran at 1,774 new tenants a day. The six fixes are D4's precondition, not parallel work.
+- Check-in is also the only Autopay door that needs no app release and no link move, so it is the shortest path from a fix to a live tenant.
+- Every one of the nine blocking issues was open on 22 Sep. One line in check-in is holding the P0 security gate open.
 
 ### 22 Sep 2026 (late, third pass), Sanchay with Claude Code
 - **Sanchay: the Platform fee is suggested on the manager app from the property's average rent. ₹58 is a placeholder, not the price.** A clause Claude had added under R63 on 22 Sep said "no band that rises with rent", which over-reached and contradicted that. Corrected in the log, visibly and attributed, not rewritten.
