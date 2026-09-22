@@ -70,7 +70,7 @@ A tenant counts when she has an approved, active UPI Autopay or e-NACH mandate (
 | What she approves | A **fixed amount**: her regular dues for the period, listed line by line | An **approved limit** equal to her regular dues, listed line by line, for example "₹10,000 rent + ₹58 platform fee = up to ₹10,058 per debit". No round-number buffer |
 | What is taken on her day | That fixed amount, once per period | Her regular dues for the period, in parts of up to ₹15,000 when the total is higher (R16) |
 | Extra bills (electricity, repairs, one-off charges) | Sent to her as a "Pay now" request, with an offer to switch to Option 2 | "Request payment via Autopay" (R47), described below |
-| Above ₹15,000 | Her bank asks for her UPI PIN on every debit [Cashfree]. Setup says so and points her to Option 2 or to a bank-account mandate | Taken in parts of up to ₹15,000 each, a set gap apart, so no PIN any time. The limit she approves is her full dues, not ₹15,000 (R46) |
+| Above ₹15,000 | Her bank asks for her UPI PIN on every debit [Cashfree]. Setup says so and points her to Option 2 or to a bank-account mandate | Taken in parts of up to ₹15,000 each, two minutes apart by default (R67), so no PIN any time. The limit she approves is her full dues, not ₹15,000 (R46, R67) |
 | Pause after approval | RentOk pauses the mandate at her bank through Cashfree and resumes it on the date [Cashfree] | RentOk raises no debits for those periods |
 | Changing her day | Needs a change on Cashfree's side, possibly a new approval [ask Cashfree] | Takes effect the next period |
 | Her dues go down for good (rent cut, fee turned off) | RentOk lowers the fixed amount; no new approval is needed [Cashfree] | Nothing to do: RentOk takes less |
@@ -233,7 +233,7 @@ She meets Autopay wherever she already is (R7):
    - **Option 1:** Cashfree sends the notice on its own schedule [Cashfree].
    - From the notice on, the amount is fixed and must match exactly [Cashfree]. Anything added later waits for the next period.
 4. **On her day,** the debit runs, only in the hours NPCI allows: before 10:00, from 13:00 to 17:00, or after 21:30 [Cashfree].
-   - **Option 2 parts:** parts run one after another with a **gap between them, which is a setting and not a fixed number**. Kamal's launch room draws five minutes; Sanchay's example is two, "2 being our variable". His payment page prototype says the same to the tenant: "taken as ₹15,000 + ₹5,000, minutes apart, and your bill reads paid when both land".
+   - **Option 2 parts:** parts run one after another with a **gap between them, which is a setting with a default of two minutes** (R67). Not a hardcoded wait: if Cashfree refuses same-day parts, the fallback to one part a day is a configuration change. Kamal's launch room draws five minutes, and his payment page prototype says the same to the tenant: "taken as ₹15,000 + ₹5,000, minutes apart, and your bill reads paid when both land".
    - **Same-day parts rest on two things we do not have yet.** Cashfree must accept two debits on one mandate inside 24 hours (PhonePe has confirmed it, Cashfree has not: Cashfree question 1), and **AFA and 2FA must be enabled on RentOk's Cashfree account**, which Kamal's launch room says they are not (Cashfree question 11). Until both land, the fallback is one part a day, which is slower but collects the same money. Only one notice can be open at a time [Cashfree], so each part carries its own notice either way.
    - **Option 1:** takes the fixed amount.
 5. **If the debit succeeds:**

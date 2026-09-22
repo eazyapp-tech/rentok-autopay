@@ -5,9 +5,9 @@ Update this at the end of every session. Newest entry on top.
 ## Now
 
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
-- **Rulings:** R1 to R66, in `decisions/decision-log.md`. R63 carries a correction of 22 Sep, marked and attributed.
+- **Rulings:** R1 to R67, in `decisions/decision-log.md`. R63 and R16 both carry corrections, marked, dated and attributed.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 29 (28 and 29 now answered as R65 and R66), added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 30 (28 and 29 now answered as R65 and R66), added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
@@ -20,7 +20,10 @@ Update this at the end of every session. Newest entry on top.
 
 ## Log
 
-### 23 Sep 2026 (the ₹15,000 tail, re-checked), Sanchay with Claude Code
+### 23 Sep 2026 (R67, and the prototype read properly), Sanchay with Claude Code
+
+- **R67:** rent above ₹15,000 is collected as several debits **two minutes apart by default**, the gap being a setting rather than a hardcoded wait. The mandate is approved at her full amount; only each debit stops at ₹15,000. It rests on two things not in hand: Cashfree accepting same-day parts, and AFA/2FA being enabled on our account.
+- The ruling carries one consequence marked as Claude's reading: `research/legal.md`'s addendum assessed this split at **24 to 48 hours** between parts and worried about bank velocity checks. Two minutes is a sharper version of the same pattern, so the interval now goes into the written question to Cashfree, not just the fact of splitting.
 
 - Sanchay: rent above ₹15,000 is handled by taking the mandate at the full amount and running several debits a short gap apart, the gap being a variable. He asked how that had been missed, and what else had.
 - **It was not missed as a design.** R16 rules it, the feature map carries it, diagram and ticket B1 (#7078) build it, and Kamal's payment page prototype ships it in code (`DEBIT_CAP = 15000`, a `debitParts()` function, and tenant copy reading "taken as ₹15,000 + ₹5,000, minutes apart"). **Four things around it were wrong or missing:**
@@ -30,6 +33,12 @@ Update this at the end of every session. Newest entry on top.
   4. **Calling open question 24 "half the prize" was wrong**, and is corrected in the log above. It read as though high rent were not automated. It is. That question picks the cheaper rail for the segment, it does not unblock it.
 - **The pattern worth keeping:** a finding written once into a research file and never carried into an open question, a ticket or the map does not exist. Three of the four above are that same failure, not four separate ones.
 - One divergence surfaced that had never been named: **our map defaults the parts to one a day** pending Cashfree, while Kamal's launch room and prototype both design for the same day, minutes apart. Both positions are now in the map with what each depends on.
+
+- **Then the second question: what else had been missed against the two HTML files.** The answer starts with how they were read. **Kamal's payment page prototype renders its entire content in JavaScript**: the page's own HTML is one empty `<div id="app">`, so stripping the tags returns nothing at all. Every earlier check of it had gone by the launch room's description of the prototype rather than by the prototype. Reading the script itself, 16 screens and their copy, turned up three things.
+  1. **A fifth conflict between his prototype and a ruling, now open question 30.** R48 makes a pause a **request** the property approves, with silence counting as yes after 48 hours (R50). His mandate screen gives the tenant a plain "Pause one month" button with no request and no approval. Open questions 19 to 22 had caught four conflicts; this is the fifth, and it was invisible because it lives in a screen, not in the PRD text.
+  2. **Underneath it, a rail question.** The same screen tells her "you can also pause or stop this from your own UPI app", and our own reading of Cashfree's docs (I10) says pause is **not supported on on-demand mandates**, which is the option most tenants are meant to pick. The screen may be promising something the rail does not do.
+  3. **One line of open question 20 was wrong and is withdrawn.** It said the sub-₹2,000 split flow "carries no refund path if she stops halfway". The prototype decides that on purpose and tells the tenant so, and the launch room's task line reads "no refunds, balance stays due". A decision recorded as an omission. The rest of question 20 stands.
+- **Checked and found already correct**, so they are not misses: the 15-day renewal ask, e-NACH's 24 to 48 hour activation and today's dues being paid separately, the payee-name line, the forwardable QR, the next three debit dates, the "no PIN, no confirmation step" rule, the virtual account's do-not-pay-by-UPI warning, and partial payments.
 
 ### 22 Sep 2026 (R66, the eligibility control), Sanchay with Claude Code
 - **R66: the "Eligible for tenants joined since" control is removed.** It is on both manager surfaces, saves a date, writes an activity log line, and no Autopay path reads it. Filed as rentok-backend#7162. Open question 29 closed.

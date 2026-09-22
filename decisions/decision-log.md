@@ -215,6 +215,19 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   **This is not a change to R37.** There are still no waves. It removes a control that looked like one and did nothing. Filed as rentok-backend#7162.
 
+- R67 (23 Sep, Sanchay) **Rent above ₹15,000 is collected as several debits a set gap apart, and the gap is two minutes by default.**
+
+  His words: "we take the mandate amount to be 15,000 or greater... hit multiple reductions subsequently, within a gap of, let's say, 2 minutes, 2 being our variable. It can be 5, it can be 1."
+
+  **Three parts to this.**
+  1. **The mandate is approved at her full amount**, not at ₹15,000. This was already R46 and is restated here because R16's own text still said ₹15,000 and has now been annotated. It is each debit, never the mandate, that stops at ₹15,000.
+  2. **The parts run one after another on the same day**, each with its own pre-debit notice, and the rent reads paid only when the last one lands.
+  3. **The gap is a setting with a default of two minutes.** Not a hardcoded wait. Kamal's launch room draws five minutes; two is the default because it is the value Sanchay named, and the setting is what matters: if Cashfree turns out to refuse same-day parts, the fallback to one part a day is then a configuration change rather than a rebuild.
+
+  **What this rests on, and neither is in hand.** Cashfree must accept two debits on one mandate inside 24 hours, which PhonePe has confirmed and Cashfree has not (Cashfree question 1). And **AFA and 2FA must be enabled on RentOk's Cashfree account**, which Kamal's launch room says they are not (Cashfree question 11). Until both land, one part a day collects the same money more slowly.
+
+  **One consequence worth naming, and it is Claude's reading rather than Sanchay's words.** `research/legal.md`'s addendum of 17 September assessed this split at **24 to 48 hours** between parts, and its main worry was that "bank velocity checks exist to catch exactly that pattern". A two-minute gap is a sharper version of the same fact pattern, not a different one: two debits two minutes apart read more like one payment cut in half than two debits on consecutive days do. The risk named there is declines, or Cashfree acting on all RentOk mandates rather than only the split ones. **This does not change the ruling**, because the purpose of the split is to stay under RBI's PIN threshold and not to avoid a charge (Autopay has no prescribed MDR, so splitting saves nothing there, which is also why N1 does not reach it). It does mean **the gap goes into the written question to Cashfree alongside the same-day question**, so the answer covers the interval we actually intend to use.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
