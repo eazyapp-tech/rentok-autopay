@@ -7,7 +7,7 @@ Update this at the end of every session. Newest entry on top.
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
 - **Rulings:** R1 to R62, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 27, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 28, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
@@ -18,6 +18,12 @@ Update this at the end of every session. Newest entry on top.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (late, third pass), Sanchay with Claude Code
+- **Sanchay: the Platform fee is suggested on the manager app from the property's average rent. ₹58 is a placeholder, not the price.** A clause Claude had added under R63 on 22 Sep said "no band that rises with rent", which over-reached and contradicted that. Corrected in the log, visibly and attributed, not rewritten.
+- The narrow rule that survives: a ladder of fixed published prices is ordinary pricing; a fee computed as 0.5% of rent, chosen because 0.5% is the UPI charge plus tax, is that charge under another name. Ladder, never rate.
+- Measured the portfolio and proposed a ladder in `research/platform-fee-ladder.md`. **R53's ₹118 ceiling cannot serve 5.7% of tenants, and its ₹58 floor is above what 0.5% would give for 57.6% of them.** The flat fee is wrong at both ends, and more often at the cheap one, because RentOk's ₹49 is flat while the charge it replaces rises with rent. They cross at about ₹11,600 of average rent.
+- Open question 28 carries the two numbers only Sanchay can set.
 
 ### 22 Sep 2026 (late, second pass), Sanchay with Claude Code
 - Re-checked Kamal's three earlier documents in `research/kamal-earlier-material-check.md`: the plan in both versions, the context handoff, and the flows page. The first check of them was made against R1 to R18 and there are now 63 rulings, so five of its own conclusions had gone stale.

@@ -149,7 +149,7 @@ does not: which app it lives in, and what is already wrong there.
 | Surface | Lives in | Ticket | What the ticket does not carry |
 | --- | --- | --- | --- |
 | Property settings | Both | D4 | The app hides the whole Autopay card when Autopay is off, so the other fields cannot be corrected (`dues_payment.dart:158`). Web always shows them |
-| Charges sheet | Both | none | No states written anywhere. Must never size the fee from rent, see section 7 |
+| Charges sheet | Both | none | No states written anywhere. It suggests a fee from the property's average rent, section 7 |
 | Tenant profile section | Both | D1 | Web has no Autopay on the tenant profile at all, so the app and web disagree about what a manager can see |
 | Virtual account card | Both | none | No states written. It is Cashfree's account in Cashfree's escrow, never RentOk's own |
 | Tenant list | Both | D1 | Neither app shows a badge on the row today. Filter codes 402 and 403 match exactly across both |
@@ -260,10 +260,20 @@ fields.** If a string arrives on them:
 Flutter releases are not forced. Leave the three integer fields exactly as they are.
 
 **Also do not:** ship the webhook event name fix on its own, which deactivates every live mandate;
-change the Late Fine sheet before the grace split lands; size the Platform fee from rent.
+change the Late Fine sheet before the grace split lands; compute the Platform fee as a percentage of rent at run time, section 7.
 
-**The charge model.** One tenant-facing charge exists: the Platform fee, flat rupees, identical on
-every method including cash, borne by the tenant by default, and the manager may absorb it. The
+**The charge model.** One tenant-facing charge exists: the Platform fee, fixed rupees, identical on
+every method including cash, borne by the tenant by default, and the manager may absorb it. **The
+amount is suggested from the property's average rent** (Sanchay, 22 Sep): ₹58 is a placeholder that
+suits a median property, and a property whose tenants pay ₹1,00,000 does not get the same figure as
+one whose tenants pay ₹8,000. The sheet suggests, the property sets, and the fee is then fixed
+rupees on her bill every month whatever she does.
+
+**The one thing that must not happen is the arithmetic, not the scaling.** A ladder of published
+prices by rent band is ordinary pricing. A rule that computes the fee as 0.5% of rent, chosen
+because 0.5% is the UPI charge plus tax, makes the fee provably the UPI charge under another name,
+which the Finance Ministry FAQ Q34 forbids passing to a customer. Same number, different provenance,
+and the provenance is the part that sits in our own screens and code. Ladder, never rate. The
 Autopay setup fee and monthly fee are deleted and must not return (R11; RBI e-mandate framework
 para 10(a) bans a charge for *availing* the facility, which catches a per-debit fee as much as a
 one-time one). Autopay is sold with a discount on the Platform fee, never with a lower price than
