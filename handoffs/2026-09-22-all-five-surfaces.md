@@ -1,7 +1,7 @@
-# Handoff: all five surface documents are written (22 Sep 2026, session close)
+# Handoff: all five surface documents, and two rulings filed (22 Sep 2026, session close)
 
-Closes the session. Covers web check-in and manager web, which have no handoff of their own, and
-sets out where the whole surface set now stands. Sessions `048e5386-b13b-4a51-948b-53493979e3d9`,
+Closes the session. Covers web check-in and manager web, which have no handoff of their own, the
+two rulings filed after them, and where the whole surface set now stands. Sessions `048e5386-b13b-4a51-948b-53493979e3d9`,
 continuing `343ddfca-41cf-4c10-beff-09279ad57acf`, `55738a51-000b-4c09-90dc-b5739dd57649` and
 `41975625-dbe3-4afd-b72b-f315a0961389`.
 
@@ -32,18 +32,39 @@ Also this session: `research/kamal-launch-room-check.md`, `research/kamal-earlie
 `research/platform-fee-ladder.md`, and `research/2026-09-22-mdr-exposure-sizing.md` in the private
 repo. Open questions 19 to 29. One correction inside R63, marked as mine.
 
+**Two rulings were filed after the surfaces were finished, both on Sanchay's instruction.**
+
+- **R64**, the charge model: one tenant-facing charge, the Platform fee, borne by the tenant by
+  default with management free to absorb it; the Autopay setup and monthly fees deleted; and the
+  amount suggested from the property's average rent rather than flat at ₹58. It had been carried in
+  the surface documents for four days without being in the log.
+- **R65**, answering open question 28: the ladder runs ₹58 to ₹399, and **both ends are
+  suggestions**. Management may set any amount above or below. This replaces the hard ₹58 to ₹118
+  band in R53.
+
 ## Decisions, with reasons
 
 - **Point at the tickets, never restate them.** A second document that summarises a first disagrees
   with it the moment either changes. The first manager draft was 558 lines and became 295.
 - **Every derived document now ends with the ruling range it was checked against.** All five say
-  "checked against R1 to R63, R64 pending". A check made on 17 September against R1 to R18 was still
+  "checked against R1 to R65", and were restamped twice this evening as rulings landed. A check made
+  on 17 September against R1 to R18 was still
   being quoted this week with five of its conclusions inverted; this is what stops that repeating.
 - **Conflicts between two owners are surfaced, never resolved quietly.** Four of Kamal's designs
   disagree with a ruling; they went in as open questions 19 to 22 with both positions and no
   recommendation.
 - **The R63 correction was struck in place, dated and attributed to me**, not edited away, because
   the wrong clause had already been quoted in a surface document.
+- **R64 carries one paragraph marked as my reasoning rather than his words:** why it does not reopen
+  R11. R11 says the tenant must not bear Autopay charges and R64 says she bears a Platform fee; they
+  hold together only because the fee is the same on cash, so it is not a charge for the mandate.
+  Without that paragraph the ruling reads as overturning R11, and the next reader would be right to
+  think so.
+- **R65 removes one clause of R53 by consequence, and that removal is marked as mine too.** R53 sent
+  a change above the ceiling through the rent change flow; with no hard ceiling there is no
+  threshold to trigger it. R13's notice rule survives and applies to every change either way.
+- **The handoffs were not rewritten when R64 landed.** They record what was true on the day. Only
+  the live documents were swept.
 
 ## What I checked, and how
 
@@ -74,19 +95,19 @@ reaches anyone before the app release.
 
 ## What is now waiting
 
-**On Sanchay.** Open questions 1 to 29 in `decisions/open-questions.md`. In the order they block
-work:
+**On Sanchay.** Open questions 1 to 29 in `decisions/open-questions.md`, 28 of them still open. In
+the order they block work:
 
-1. **R64**, still not in the decision log, four days running. It is written into all five surface
-   documents.
-2. **Open question 24**, whether e-NACH becomes the default rail above ₹15,000. The numbers put it
+1. **Open question 24**, whether e-NACH becomes the default rail above ₹15,000. The numbers put it
    at roughly half the prize: 15.7% of tenants carry 48.7% of the charge.
-3. **Open question 28**, the two Platform fee ladder numbers, the floor and the ceiling.
-4. **Open question 19**, whether the payment page names the UPI charge at all, where Kamal's PRD and
+2. **Open question 19**, whether the payment page names the UPI charge at all, where Kamal's PRD and
    four rulings disagree head on.
-5. **Open questions 10 to 18**, which decide what the Autopay list and its alerts do. Three of them
+3. **Open questions 10 to 18**, which decide what the Autopay list and its alerts do. Three of them
    block the list itself.
-6. **Open question 29**, the inert "eligible since" control: rule it in or take it off the screen.
+4. **Open question 29**, the inert "eligible since" control: rule it in or take it off the screen.
+5. **Open questions 20 to 23, 25 and 26**, the rest of what came out of Kamal's material.
+
+**Closed this session:** R64 is filed, and open question 28 is answered as R65.
 
 **On Kamal:** whether the Cashfree list of fifteen really went out on 21 September, since our record
 says it is drafted and unsent; and whether the ₹15 mandate fee is quarterly or per execution, which
