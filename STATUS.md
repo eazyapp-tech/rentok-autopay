@@ -7,10 +7,10 @@ Update this at the end of every session. Newest entry on top.
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
 - **Rulings:** R1 to R62, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 23, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, and from the tenant app**. All listed in `decisions/open-questions.md`.
-- **Waiting on Cashfree:** ten written questions, the first being whether one mandate can be debited in parts on the same day. Also in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 26, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, and from the 23-section check of his launch room**. All listed in `decisions/open-questions.md`.
+- **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
-- **Cashfree email:** drafted for Kamal in `drafts/cashfree-email.md`, not sent.
+- **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
 - **Build tickets:** 36 filed 18 Sep under epic #6846, listed in `map/build-tickets.md`, with cut ranks (R62).
 - **Not done yet:** engineering tickets from the map, and linking this repo from epic #6846. Linear mirroring is done: project Autopay, 7 parents and 57 sub-issues, 21 Sep.
 - **Surface documents:** `surfaces/manager-app.md`, `surfaces/payment-page.md` and `surfaces/tenant-app.md` (all 22 Sep). Manager web and web check-in are left.
@@ -18,6 +18,12 @@ Update this at the end of every session. Newest entry on top.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (late), Sanchay with Claude Code
+- Checked **all 23 sections** of Kamal's launch room against the rulings, in `research/kamal-launch-room-check.md`. The payment page document had used six of them; the other seventeen had been read but never diffed.
+- Added open questions 24 to 26: e-NACH as the default rail above ₹15,000, the challan removal, and filing the two missing tickets.
+- Two of his sections answer our own open questions without a ruling: the payee-name framing answers 6, and the forwardable QR answers 23.
+- Found a contradiction in our own record: we say the Cashfree email is not sent, his page says fifteen questions went out on 21 Sep.
 
 ### 22 Sep 2026 (night), Sanchay with Claude Code
 - Wrote `surfaces/tenant-app.md`, the tenant app seen as one surface, pointing at A1 to A6, B1 to B4, C1 to C6 and D5.
