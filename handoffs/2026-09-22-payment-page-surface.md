@@ -12,7 +12,7 @@ objective. So this document is the extract, not the redesign.
 
 ## What changed
 
-- **`surfaces/payment-page.md` is new**, 300 lines. A 22 row map, three flows that
+- **`surfaces/payment-page.md` is new**, 369 lines. A 22 row map, three flows that
   `map/diagrams.md` does not already draw, a pointer table, eight things broken today, the ship
   order, what not to touch, a section sorting Kamal's prototype into take, do not take and needs a
   ruling, and what is waiting on a person.
