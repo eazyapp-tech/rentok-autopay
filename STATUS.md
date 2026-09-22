@@ -5,7 +5,7 @@ Update this at the end of every session. Newest entry on top.
 ## Now
 
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
-- **Rulings:** R1 to R62, in `decisions/decision-log.md`.
+- **Rulings:** R1 to R64, in `decisions/decision-log.md`. R63 carries a correction of 22 Sep, marked and attributed.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
 - **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 29, added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
@@ -19,6 +19,11 @@ Update this at the end of every session. Newest entry on top.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (session close, R64 filed), Sanchay with Claude Code
+- **R64 added to `decisions/decision-log.md`** on Sanchay's instruction: one tenant-facing charge, the Platform fee, borne by the tenant by default with management free to absorb it; the Autopay setup and monthly fees deleted; and the amount suggested from the property's average rent, with ₹58 as a placeholder rather than the price.
+- It carries one paragraph marked as Claude's reasoning rather than his words: why R64 does not reopen R11, which turns on the Platform fee being the same on cash and therefore not an Autopay charge.
+- Swept the five surface documents and STATUS: they said R64 was missing and were stamped "R1 to R63, R64 pending". Both now read R1 to R64. The handoffs were left as written, because they are a record of what was true on the day.
 
 ### 22 Sep 2026 (session close), Sanchay with Claude Code
 - **All five surface documents are written**, 1,654 lines: manager app, payment page, tenant app, web check-in, manager web. Handoff in `handoffs/2026-09-22-all-five-surfaces.md`.
@@ -74,7 +79,7 @@ Update this at the end of every session. Newest entry on top.
 - Wrote `surfaces/manager-app.md`, the manager app seen as one surface, then rewrote it to point at D1 to D7 rather than restate them. 558 lines down to 295.
 - Added open questions 10 to 18, nine proposals that were buried inside D1, D2 and D3.
 - Traced five things first-hand: rent and agreement paths against the mandate ceiling, grace precedence, the manager app inventory, app versus web parity, and the charges. Findings are in the surface document, section 5.
-- Ruled by Sanchay: the tenant bears one Platform fee, the Autopay setup and monthly fees are deleted. Recorded as R64 in the document and **not yet in the decision log**.
+- Ruled by Sanchay: the tenant bears one Platform fee, the Autopay setup and monthly fees are deleted. Recorded as **R64**, added to the decision log on 22 Sep.
 
 ### 18 Sep 2026 (night), Sanchay with Claude Code
 - Turned the map into 36 build tickets (drafted in parallel, then checked for map coverage, plain language and rulings, and against the code), filed them, and rebuilt epic #6846 with every ticket and bug nested under it.

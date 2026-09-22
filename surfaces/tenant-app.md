@@ -8,7 +8,7 @@ that view, and it points at the ticket for every detail rather than repeating it
 to touch, and what is still waiting on a person.**
 
 Code was read on `rentok_tenant_package` origin/main `afea1abe` and `rentok-backend` origin/master
-`1498fcd62`, both on 22 September 2026. Issue states were checked the same day. **Checked against rulings R1 to R63, R64 pending.** Markers follow the
+`1498fcd62`, both on 22 September 2026. Issue states were checked the same day. **Checked against rulings R1 to R64.** Markers follow the
 repo: **(agreed)** confirmed by Sanchay, **(proposed)** waiting on his yes.
 
 ---
@@ -304,9 +304,9 @@ open questions, because they are build decisions and not product ones: whether t
 Autopay screens are a web view of the payment page, and where an Autopay announcement sits against
 the update-app and review sheets in the one slot they share.
 
-**R64 is still not in the decision log.** His 22 September charge ruling is written into all three
-surface documents and needs to be added as a ruling or confirmed as covered by R35 and R63. Product
-rulings are his and are never quietly edited.
+**R64 is in the decision log** (added 22 Sep): one tenant-facing charge, the Platform fee, borne by the
+tenant by default with management free to absorb it, the Autopay setup and monthly fees deleted, and
+the amount suggested from the property's average rent rather than flat at ₹58.
 
 ---
 

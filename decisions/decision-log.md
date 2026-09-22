@@ -172,6 +172,20 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   This changes N6 ("Autopay price" as a lower rent): the discount is on the platform fee, not on rent. R53's ₹58 floor would move if the fee is set at ₹50. **Open:** who funds the ₹30, RentOk or the property (recommended: RentOk, which is the merchant that saves the UPI charge).
 
+- R64 (21 and 22 Sep, Sanchay) **One tenant-facing charge, and its amount is suggested from the property's average rent.**
+
+  **The charge (21 Sep, confirmed and narrowed 22 Sep).** The tenant bears the property's charge by default, and management can take it onto itself instead. The switch lives in Autopay settings in the manager app.
+
+  **What it is, and what it is not (22 Sep).** There is exactly one tenant-facing charge: the **Platform fee**. The old **Autopay setup fee and Autopay monthly fee are deleted and must not return**. Both are still live in code: the struck-out setup fee at web check-in (marketplace#938) and the two "who bears it" dropdowns in manager web property settings, where the unset default is RentOk. D4 removes them.
+
+  **Why this does not reopen R11** (this paragraph is Claude's reasoning, not Sanchay's words, and is here because R64 reads as a contradiction without it). R11 says the tenant must not bear Autopay charges. The Platform fee is not an Autopay charge: it is the property's charge for running the tenancy on RentOk, it is the same amount on cash, bank transfer, link and Autopay, and a tenant who never uses Autopay pays it too. That is also what keeps it lawful under the RBI e-mandate framework 2026 para 10(a), which bans a charge for availing the mandate, and under the Finance Ministry UPI MDR FAQ Q34, which bans passing the UPI charge to a customer. A charge that varied by method, or that existed only for Autopay tenants, would be the thing both forbid.
+
+  **The amount (22 Sep).** **₹58 is a placeholder, not the price.** The manager app suggests a fee from the property's average rent, and a property whose tenants pay ₹1,00,000 does not get the same figure as one whose tenants pay ₹8,000. This modifies the flat default in R42 and R43, which stays as the middle of the range rather than the answer, and puts R53's ₹58 to ₹118 band in question: measured on 22 Sep, 57.6% of tenants sit at properties below that floor and 5.7% above the ceiling.
+
+  **The one thing the amount must never be.** A ladder of fixed published prices by rent band is ordinary pricing. A fee **computed** as a percentage of the payment, or set at 0.5% because 0.5% is the UPI charge plus tax, is that charge under another name. Ladder, never rate. This is R63's second condition as corrected on 22 Sep.
+
+  **Still open:** the two numbers in the ladder, its floor and its ceiling, are open question 28, with a proposal and the portfolio bands in `research/platform-fee-ladder.md`.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.

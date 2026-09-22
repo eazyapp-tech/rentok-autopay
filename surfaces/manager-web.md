@@ -9,8 +9,7 @@ repeating it.
 to touch, and what is still waiting on a person.**
 
 Code was read on `rentok-manager-web` origin/main `5311f662`, `rentokmanagerflutter` origin/main and
-`rentok-backend` origin/master `1498fcd62`, all on 22 September 2026. **Checked against rulings R1
-to R63, R64 pending.** Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)**
+`rentok-backend` origin/master `1498fcd62`, all on 22 September 2026. **Checked against rulings R1 to R64.** Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)**
 waiting on his yes.
 
 This is the last of the five surface documents. The others are `manager-app.md`, `payment-page.md`,
@@ -330,7 +329,7 @@ an on demand mandate.
 **Not measured, and it should be:** how many managers only ever use the app. It decides whether the
 manager line reaches anyone before the release.
 
-**R64 is still not in the decision log.**
+**R64 is now in the decision log** (22 Sep), the one tenant-facing charge and its amount suggested from the property's average rent.
 
 ---
 

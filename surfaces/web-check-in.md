@@ -10,7 +10,7 @@ to touch, and what is still waiting on a person.**
 
 Code was read on `eazypg-marketplace` origin/main `66b49dd0` and `rentok-backend` origin/master
 `1498fcd62`, both on 22 September 2026. Production figures were run the same day. Issue states
-checked the same day. **Checked against rulings R1 to R63, R64 pending.** Markers follow the repo:
+checked the same day. **Checked against rulings R1 to R64.** Markers follow the repo:
 **(agreed)** confirmed by Sanchay, **(proposed)** waiting on his yes.
 
 ---
@@ -302,7 +302,7 @@ signs.
 **On an adviser:** the Autopay clause in the agreement, with a payments lawyer. It is the only
 surface where the wording has a signature attached to it.
 
-**R64 is still not in the decision log.**
+**R64 is now in the decision log** (22 Sep), the one tenant-facing charge and its amount suggested from the property's average rent.
 
 ---
 
