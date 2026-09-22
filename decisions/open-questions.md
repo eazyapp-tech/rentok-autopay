@@ -28,7 +28,12 @@ These follow from his rulings, and are marked "(proposed)" in the feature map.
 | 17 | Alerts with a clock fire at once (pause request, all retries failed, cancellation); the rest arrive in one 09:00 summary | Decides whether a manager is interrupted nine times a day or once |
 | 18 | On day one, account owners and admins get all ten Autopay permissions; other members get "view the Autopay list" and "send setup" only if they already have "View Dues, Collection & Send Reminders" | Ten new switches default to off would leave every team unable to act on 1 Oct |
 
-Items 10 to 18 were added on 22 Sep 2026 from the manager build tickets D1, D2 and D3, where they were recorded as proposals and would not have been seen here.
+| 19 | The payment page says nothing about the new 0.4% UPI charge | Kamal's launch room PRD makes the charge the first thing she reads, and orders the payment methods by what each costs her. R11, N2, N6 and R63's fourth condition all forbid it. One of the two has to give, and it sets the tone of the whole surface |
+| 20 | The sub-₹2,000 split session does not ship | N1 rules out splitting to avoid the charge. The PRD says legal cleared it, that N1 covers only an Autopay mandate's rent, and that we will not advertise it as charge avoidance; the prototype then labels it "no charge on the parts" and sorts it by cost. Also carries no refund path if she stops halfway |
+| 21 | The virtual account stays parked until after 15 Oct | The map parks it pending Cashfree's written answer on settlement, and the legal check warns that rent landing in RentOk's own account is aggregation without a licence. The PRD says the Cashfree API is live and engineering can start now |
+| 22 | Rent Points and the Hubble voucher store are not part of the 1 Oct scope | Points on every rupee of rent, a grant for setting up Autopay and a voucher catalogue are in the PRD and the prototype, and in no ruling. RentPass cashback is parked until a partner funds it, because RentOk absorbs nothing (R11) |
+
+Items 10 to 18 were added on 22 Sep 2026 from the manager build tickets D1, D2 and D3, where they were recorded as proposals and would not have been seen here. Items 19 to 22 were added the same day from Kamal's launch room PRD and his payment page prototype, where each one is designed and built but disagrees with a ruling.
 
 ## 2. Waiting on Cashfree
 

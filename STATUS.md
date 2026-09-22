@@ -7,17 +7,23 @@ Update this at the end of every session. Newest entry on top.
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
 - **Rulings:** R1 to R62, in `decisions/decision-log.md`.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 18, added 22 Sep from the manager tickets**. All listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 22, added 22 Sep from the manager tickets and from Kamal's PRD and prototype**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** ten written questions, the first being whether one mandate can be debited in parts on the same day. Also in `decisions/open-questions.md`.
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** drafted for Kamal in `drafts/cashfree-email.md`, not sent.
 - **Build tickets:** 36 filed 18 Sep under epic #6846, listed in `map/build-tickets.md`, with cut ranks (R62).
 - **Not done yet:** engineering tickets from the map, and linking this repo from epic #6846. Linear mirroring is done: project Autopay, 7 parents and 57 sub-issues, 21 Sep.
-- **Surface documents:** `surfaces/manager-app.md` (22 Sep). Payment page is next.
+- **Surface documents:** `surfaces/manager-app.md` and `surfaces/payment-page.md` (both 22 Sep). Tenant app, manager web and web check-in are left.
 - **Access:** public until Kamal has GitHub access, then private. Until then Kamal sends his work to Sanchay, who adds it here.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (evening), Sanchay with Claude Code
+- Wrote `surfaces/payment-page.md`, the payment page seen as one surface, pointing at A1 to A9, B1 to B4, C1, C2, D5 and E5. Three flows drawn that `map/diagrams.md` does not already carry.
+- Read Kamal's launch room PRD and his sixteen-screen payment page prototype in full, and sorted every idea in them into take, do not take, and needs a ruling.
+- Added open questions 19 to 22, all four from that pair of documents: the UPI charge notice, the sub-₹2,000 split, the virtual account, and Rent Points with the Hubble store.
+- Traced eight things first-hand on origin/main and origin/master, 22 Sep. The largest: the Autopay system on the payment page is finished and reaches nobody, and the move of live links to the new page has not started with three days left to R55's date.
 
 ### 22 Sep 2026, Sanchay with Claude Code
 - Wrote `surfaces/manager-app.md`, the manager app seen as one surface, then rewrote it to point at D1 to D7 rather than restate them. 558 lines down to 295.
