@@ -9,7 +9,7 @@ repeating it.
 to touch, and what is still waiting on a person.**
 
 Code was read on `rentok-manager-web` origin/main `5311f662`, `rentokmanagerflutter` origin/main and
-`rentok-backend` origin/master `1498fcd62`, all on 22 September 2026. **Checked against rulings R1 to R65.** Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)**
+`rentok-backend` origin/master `1498fcd62`, all on 22 September 2026. **Checked against rulings R1 to R66.** Markers follow the repo: **(agreed)** confirmed by Sanchay, **(proposed)**
 waiting on his yes.
 
 This is the last of the five surface documents. The others are `manager-app.md`, `payment-page.md`,
@@ -54,7 +54,7 @@ Section 5.
 | --- | --- | --- | --- | --- |
 | 1 | Property payment settings, Autopay block | **Exists**, and carries the deleted fee model, section 5 | **D4** | 1 Oct |
 | 2 | Autopay grace period field | Exists here, missing in the app | **D4**, **S2**, backend#7049 | Backend first |
-| 3 | "Eligible for tenants joined since" | **On screen, saved, and read by nothing**, section 5 | **Not ticketed** | Needs a ruling |
+| 3 | "Eligible for tenants joined since" | **On screen, saved, and read by nothing**, section 5 | **R66: removed.** backend#7162 | Backend first |
 | 4 | The charges sheet that pushes a property to set the fee | Does not exist | **Not ticketed.** From the 18 Sep meeting and Sanchay, 22 Sep | 1 Oct |
 | 5 | Tenant list, Autopay filter | Two states: enabled, disabled | **D1** | 1 Oct |
 | 6 | Tenant list, Autopay badge on the row | Does not exist | **D1** | 1 Oct |
@@ -121,7 +121,7 @@ flowchart TD
     D --> J[Kept, and split from the late fine grace<br/>backend 7049 first]
     E -.R11 deletes the fee.-> K[Gone]
     F -.R11 deletes the fee.-> K
-    G -.R37: no waves.-> L[Needs a ruling]
+    G -.R66.-> L[Gone: it read as a wave<br/>and did nothing]
     K --> M[One control instead:<br/>the Platform fee, suggested<br/>from average rent]
     I --> M
 ```
@@ -137,7 +137,7 @@ does not: what is there today, and what is already wrong with it.
 | --- | --- | --- |
 | Payment settings | D4 | It is the only place a human is shown the deleted fee model, with pictures and a struck-out price |
 | Autopay grace | D4, #7049 | Present here and absent in the app, so the two surfaces already disagree about a money rule |
-| Eligible since | none | Saved to the property and read by no Autopay path, so it promises an exclusion that never happens |
+| Eligible since | R66, #7162 | Removed. The backend stops accepting it first, which also ends the bulk copy that spreads it |
 | Tenant list filter | D1 | Two states against D1's eighteen, and they read the property's flag rather than her mandate |
 | Tenant profile | D1, C1 | Not one Autopay reference in the whole of `components/People` |
 | Autopay list | D1 | The single largest new screen on this surface, and the manager's main tool for the push |
@@ -285,7 +285,7 @@ on one dropdown today.
 **Do not keep the Enable Autopay toggle.** R61 removed it; only "required" can be turned off, and
 existing mandates keep running either way.
 
-**Do not build on the "eligible since" gate** until it is ruled on. R37 forbids waves.
+**Do not build on the "eligible since" gate.** R66 removes it, and the backend stops accepting the field first (backend#7162).
 
 **Do not send a string on `autopay_status`.** Manager web writes the property's integer at
 `PaymentSettings.tsx:212`, and a copy to other properties writes it again at `:408`. Four fields
@@ -318,8 +318,8 @@ an on demand mandate.
 
 **On Sanchay, specific to this surface:**
 
-- **whether the "eligible for tenants joined since" gate stays, goes, or was never meant to exist.**
-  It is live, it persists, and R37 says there are no waves. New, and added as open question 29;
+- nothing new. The "eligible for tenants joined since" control was open question 29 and is answered:
+  **R66 removes it**, backend first (backend#7162);
 - the nine items from the manager tickets, open questions 10 to 18, which decide what the Autopay
   list and its alerts do. Three of them block the list itself: status precedence, how the rate is
   counted, and alert timing;

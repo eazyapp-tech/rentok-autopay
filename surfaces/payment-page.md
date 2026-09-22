@@ -8,7 +8,7 @@ page is that view, and it points at the ticket for every detail rather than repe
 to touch, and what is still waiting on a person.**
 
 Code was read on `eazypg-marketplace` origin/main `66b49dd0` and `rentok-backend` origin/master
-`1498fcd62`, both on 22 September 2026. Issue states were checked the same day. **Checked against rulings R1 to R65.** Markers follow the
+`1498fcd62`, both on 22 September 2026. Issue states were checked the same day. **Checked against rulings R1 to R66.** Markers follow the
 repo: **(agreed)** confirmed by Sanchay, **(proposed)** waiting on his yes.
 
 ---

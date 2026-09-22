@@ -5,9 +5,9 @@ Update this at the end of every session. Newest entry on top.
 ## Now
 
 - **Feature map:** version 4 (PR #5, 18 Sep), in `map/feature-map.md`.
-- **Rulings:** R1 to R65, in `decisions/decision-log.md`. R63 carries a correction of 22 Sep, marked and attributed.
+- **Rulings:** R1 to R66, in `decisions/decision-log.md`. R63 carries a correction of 22 Sep, marked and attributed.
 - **Code check, 18 Sep:** every older issue is still true, 26 new issues filed (3 P0). 473 of 781 current Autopay tenants have no debit queued. See `research/code-check-18sep.md`; epic #6846 lists what to fix before 30 Sep.
-- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 29 (28 now answered as R65), added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
+- **Waiting on Sanchay:** which brand whitelabelled tenants see, link life and push list, testing with real money, the stop-all switch (open questions 6 to 10), #7055 (what Autopay off means for running mandates), five points marked "(proposed)" in the map, and **open questions 10 to 29 (28 and 29 now answered as R65 and R66), added 22 Sep from the manager tickets, from Kamal's PRD and prototype, from the tenant app, from the 23-section check of his launch room, and from re-checking his three earlier documents**. All listed in `decisions/open-questions.md`.
 - **Waiting on Cashfree:** Kamal's launch room says his list of fifteen went to Cashfree on **21 Sep**, three of them marked blocking. Our ten are in `decisions/open-questions.md` and `drafts/cashfree-email.md` still says draft. **Reconcile the two lists and correct whichever record is wrong.**
 - **Waiting on advisers:** the agreement wording and the platform fee line (a payments lawyer), and RentOk's tax position.
 - **Cashfree email:** our copy is still marked draft. Kamal's launch room says a fifteen-item list was sent on 21 Sep. See `research/kamal-launch-room-check.md`, item 1.
@@ -19,6 +19,13 @@ Update this at the end of every session. Newest entry on top.
 - **Working now:** nobody. Put your name here when you start.
 
 ## Log
+
+### 22 Sep 2026 (R66, the eligibility control), Sanchay with Claude Code
+- **R66: the "Eligible for tenants joined since" control is removed.** It is on both manager surfaces, saves a date, writes an activity log line, and no Autopay path reads it. Filed as rentok-backend#7162. Open question 29 closed.
+- Checked every consumer before recording the removal: it is in the manager app as well as manager web, and **the app's copy-to-properties action copies the date to every property in the copy**, so one wrong date spreads.
+- Order matters and is in the ruling: **the backend stops accepting the field first**, which ends both writers and the bulk copy in one place; web drops the control with D4; the app drops it in the release after 1 Oct.
+- Nine properties have a date saved, eight with Autopay on, one dated 2007. Null them; drop the column after 1 Oct.
+- **D4 needs two edits from tonight's rulings:** its settings screen lists three items and does not mention this control, and its fee range still reads ₹58 to ₹118, which R65 replaced.
 
 ### 22 Sep 2026 (R65, the fee ladder), Sanchay with Claude Code
 - **R65: the Platform fee ladder runs ₹58 to ₹399, suggested from the property's average rent, and both ends are suggestions.** Management may set any amount above or below them. This replaces the hard ₹58 to ₹118 band in R53. Open question 28 is closed.

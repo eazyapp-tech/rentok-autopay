@@ -202,6 +202,19 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   **Recommended guardrail, not ruled:** when a manager sets an amount well outside the ladder, show a plain warning that his tenants see it on every bill and that it needs notice before it starts. **It must not show the amount as a share of rent**, which is the arithmetic R63's second condition forbids.
 
+- R66 (22 Sep, Sanchay, answering open question 29) **The "Eligible for tenants joined since" control is removed.**
+
+  It is on both manager surfaces, it saves a date to the property and writes an activity log line, and **no Autopay path reads it**. An owner who sets it is told his older tenants are excluded, and every one of them is still asked. It also travels: the manager app's copy-to-properties action copies the date to every property in the copy (`copy_details_bottom.dart:341`, origin/main).
+
+  **The order it comes out in, because the two front ends move at different speeds.**
+  1. **The backend stops accepting the field.** That ends both writers at once, including the bulk copy, and it is one place: `src/controllers/property.ts:9450` and `:9715-9737`, origin/master. Do this first.
+  2. **Manager web removes the control** (`PaymentSettings.tsx`, `types/propertySettings/settings.ts`). D4 rewrites that screen to three items and does not list this one, so the removal lands with D4.
+  3. **The manager app removes it in the release after 1 October** (`autopay_settings_bottom.dart`, `dues_payment.dart`, `copy_details_bottom.dart`, and the config model). Until then the app can still show it, and with step 1 done it saves nothing.
+
+  **The saved dates: nine properties**, eight of them with Autopay on, measured 22 Sep. One is dated 2007, which is what a control nobody reads looks like after a year. **Null the nine**, because the danger was never the control but the data waiting for someone to wire it up. Dropping the column itself is cleanup after 1 October, not now.
+
+  **This is not a change to R37.** There are still no waves. It removes a control that looked like one and did nothing. Filed as rentok-backend#7162.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.

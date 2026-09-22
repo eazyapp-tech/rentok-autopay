@@ -10,7 +10,7 @@ to touch, and what is still waiting on a person.**
 
 Code was read on `eazypg-marketplace` origin/main `66b49dd0` and `rentok-backend` origin/master
 `1498fcd62`, both on 22 September 2026. Production figures were run the same day. Issue states
-checked the same day. **Checked against rulings R1 to R65.** Markers follow the repo:
+checked the same day. **Checked against rulings R1 to R66.** Markers follow the repo:
 **(agreed)** confirmed by Sanchay, **(proposed)** waiting on his yes.
 
 ---
