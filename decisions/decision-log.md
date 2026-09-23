@@ -287,6 +287,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Counted in months, not bills (Claude's refinement while building):** one month's rent, electricity and food are three late bills and one ordinary slip. A tenant one month late is exactly who Autopay is for, so the sheet still opens for her. The test tenant (four bills, all due 17 Sep) proved the bill count wrong.
   - **Waiting does not use up the sheet.** It is once per tenant, and only an actual showing marks it seen. The small top card on her bill stays in every case.
 
+- R74 (23 Sep, Sanchay) **Her UPI app and bank show the mandate as "EazyApp Tech Pvt Ltd", RentOk's company as registered with Cashfree. It is not the property's name, and not "RentOk".**
+
+  His words: "the payee name shows as EazyApp Tech Pvt Ltd, go ahead"
+
+  - **Closes the open question on the payee name.** The approve screens had said "check it says {name}" without a confirmed name.
+  - **What changed on the page (Claude's reading):** the name is glossed as "the company behind RentOk" wherever it is shown, because a company name she has never heard of is where she backs out. The FAQ answer "your bank shows the name of your property" was false under this ruling and is replaced.
+  - **Also ruled the same day:** show her Rent Coins balance from sample data until the backend sends it (rentok-backend#6825), then bind it. His words: "we can show the coin vaala cheese for now because the backend is not yet made... Once the backend is done, we'll, of course, wire it and bind it there."
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
