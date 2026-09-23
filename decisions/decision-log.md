@@ -333,6 +333,13 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Changes Claude's proposal:** expiry counts from when each coin was earned, not from 12 months without any payment.
   - **So (Claude's reading):** coins expire in batches by the month they were earned, so spending takes the oldest first; the Rent Coins page shows what expires next and when; she is told before a batch expires; the backend sends the expiry date per batch. Cancelling autopay stops only the setup bonus being earned again, not earning from payments (R76).
 
+- R80 (23 Sep, Sanchay, the Autopay Map's sixth question) **Someone else, such as a parent, can approve her autopay at launch.**
+
+  His words: "A, someone else approves at launch".
+
+  - **The option he chose, as Claude put it:** at the approve step she taps "Someone else pays"; the payer gets a link or QR and approves in their own UPI app (Kamal's prototype has this flow). The option carried Claude's line that the coins still go to the tenant, because the rent is hers.
+  - **So (Claude's reading):** the mandate sits on the payer's bank account, so the payer's bank sends the pre-debit notice and the payer can revoke it in their UPI app at any time, which RentOk cannot stop; on RentOk's own surfaces pause and cancel stay hers (R72). Your autopay must name who pays ("Paid from Papa's account") and she must see when the payer revokes it. A failed debit is told to both.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
