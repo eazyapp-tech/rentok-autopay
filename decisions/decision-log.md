@@ -295,6 +295,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **What changed on the page (Claude's reading):** the name is glossed as "the company behind RentOk" wherever it is shown, because a company name she has never heard of is where she backs out. The FAQ answer "your bank shows the name of your property" was false under this ruling and is replaced.
   - **Also ruled the same day:** show her Rent Coins balance from sample data until the backend sends it (rentok-backend#6825), then bind it. His words: "we can show the coin vaala cheese for now because the backend is not yet made... Once the backend is done, we'll, of course, wire it and bind it there."
 
+- R75 (23 Sep, Sanchay, answering the Autopay Map's first question) **She spends Rent Coins against her rent from day one. The gift card store comes too, later, switched on by the backend.**
+
+  His words: "both, rent from day one and the store too. Store thing: we might be able to do it later, and it will be controlled by the backend, but against rent from day one is 100% certain."
+
+  - **Against rent: certain for launch.** It follows R71's "reducing the payable (that is, rent)".
+  - **The store (Hubble):** in scope, not at launch, behind a backend switch. Claude's reading: while the switch is off, the page shows no store and no "coming soon", because a door to nothing is a dead end.
+  - **Still open (the map's questions 2 to 7):** what earns coins, using coins on each debit by themselves, who pays the owner the difference, expiry and leaving, a parent approving, step 4's hero.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
