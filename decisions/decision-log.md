@@ -244,6 +244,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   **This corrects two lines, marked here rather than rewritten.** R67 and the note under R16 both say the mandate is approved "at her full amount". That wording came from Claude's design note under R46, "the limit equals her regular dues", which is now replaced by this ruling. What both got right stands: each debit stops at ₹15,000.
 
+- R69 (23 Sep, Sanchay) **"All my monthly dues" takes the current month only, by default. Older unpaid bills are not swept into her debit.**
+
+  His words: "current month only, go ahead, can be selected as default."
+
+  **What "current month" has to mean.** The rent period her debit is paying, not the calendar month the debit falls in. They differ when her window crosses the month end (R41): rent due on the 30th, debit on the 3rd. The engine today uses the calendar month, so it would miss that rent; filed as rentok-backend#7179. For the ordinary case the engine already does this: it ties each debit to that month's bills by id, not oldest first, and 1,392 of 1,408 bills linked in production sit in the right month.
+
+  **Still being discussed, not part of this ruling.** Sanchay raised that the payment page already lets a tenant edit the amount when her property allows partial payment, so she could choose to pay more (older bills) or less. Claude's position, put to him the same day: the edit belongs to what she pays today, not to the monthly debit, which the bank fixes 24 hours ahead and which stops being automatic if it needs setting every month. Recorded here when he rules.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
