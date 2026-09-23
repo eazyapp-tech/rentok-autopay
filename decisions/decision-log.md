@@ -353,6 +353,17 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Removes:** the share action on the approve screen ("Someone else pays your rent? Send it to them") and Kamal's QR route. R80 stands as "anyone holding her link can set it up"; R81 (no sign-in at setup) is what makes that work.
 - R83 (23 Sep, Sanchay) **Step 4 leads with her autopay card (option A), as a first version to improve.** The terms stay open on the screen, never folded away ("the feeling of control"); edit controls on the chosen values are icons, not a second blue word. The three date tiles are to be replaced by a better picture of when each month's debit happens (he suggested a calendar), still to be designed.
 
+- R84 (23 Sep, Sanchay, answering eazypg-marketplace#1054) **Autopay's first debit is always next month. It never takes a bill already raised when she sets it up; every open bill is hers to pay today.**
+
+  His words: "A".
+
+  - **So:** the bill's "Paying today", step 4's "Yours to pay now" and the pay screen agree on the full total; the label "Autopay my bills from next month" is true; You're set shows the first debit a month out.
+  - **Backend (Claude's reading):** at setup the debit schedule must skip every rent invoice already raised, or she is charged twice for a bill she paid today (the same risk as #7002). And a live mandate should send which invoice its next debit takes, so the page never has to guess it (today it guesses from dates, `coveredRent` in the payment page).
+
+- R85 (23 Sep, Sanchay) **Order of work: first the launch sheet and setup steps 1 to 4, finished; coins end to end only after everything else is done.**
+
+  His words: "we don't want to move into coins right now. First, let's solve all of steps 1, 2, 3, and 4 of AutoPay and everything, and also that bottom sheet that comes on the homepage... and then only we will move on to coins later."
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
