@@ -1,6 +1,7 @@
 # Handoff: the ₹15,000 tail, two rulings, and the first build on the payment page (23 Sep 2026)
 
-Sessions `0e35cba0-3058-47ee-8b79-45518c156d94` and `e561c4b0-737d-4ece-978e-fe271ccb98e4`, continuing
+Sessions `0e35cba0-3058-47ee-8b79-45518c156d94`, `e561c4b0-737d-4ece-978e-fe271ccb98e4` and
+`690537f1-75e5-41c8-9340-5f717381ef55`, continuing
 `18944ffa-833a-4cff-9dd9-7ddf336bc380`.
 The earlier record from this run is `2026-09-22-all-five-surfaces.md`.
 
@@ -36,7 +37,7 @@ The transcript is in the private repo, `meetings/2026-09-22-autopay-implementati
 **Kamal's prototype** is in the private repo on branch `proto/payment-page-autopay`, unchanged first,
 then with the Platform fee on the bill and two "free" promises narrowed.
 
-**The build.** `eazypg-marketplace`, branch `feat/autopay-setup-screen` (`1ddb3749`, pushed, no PR).
+**The build.** `eazypg-marketplace`, branch `feat/autopay-setup-screen` (`1ddb3749`, then `47007e70`; pushed, no PR).
 The setup sheet now asks what autopay pays, reads the ceiling and window from the payload, keeps her
 day inside her grace days, and no longer promises what R41 took away. The branch carries its own
 handoff, `docs/handoffs/2026-09-23-autopay-setup-screen.md`.
@@ -51,6 +52,23 @@ already create mandates and take debits seamlessly. The approval still goes thro
 page, and **the pre-debit notice call (`notify-mandate`) is called nowhere**, which Option 2 cannot
 run without. Added to `rentok-backend#7078`. UPI Collect is being withdrawn: intent on mobile, QR on
 desktop.
+
+**Reviewing the sheet on the team's own property, late on 23 Sep.** Sanchay asked to see it on the
+team's own account rather than a real tenant's. The property to review against is **Ishika**, the
+account's first property (the one the manager app shows as 1220096612A), which takes both online and
+cash. Its tenants have live links, and one of them has ₹12,000 rent due on the 30th. That single case
+checks two things: his own example (₹12,000 of fixed dues gets a ₹15,000 ceiling) and a window that
+crosses the month end (the 30th, 31st and 1st to 6th open). A ₹50,000 tenant there shows the PIN
+line under Rent only. Fresh link codes come from Metabase at review time; none are written here.
+
+Two things came out of that review. **A copy bug of mine:** the note under the day grid said "The
+30th is the last day in shorter months", which is garbled and false for February. It now says "In a
+month with no 30th, it goes on the last day" (`47007e70` on the branch). And **a test property,
+Candidate Booking Test, was cash-only**, so the page offered it no autopay, which is correct. Sanchay
+switched its online payments on.
+
+The local review server runs from the worktree through `eazypg-marketplace/.claude/launch.json`
+(name `pay-autopay`, port 3012, `http://pay.localhost:3012`). That file is local and not committed.
 
 ## Decisions, with reasons
 
