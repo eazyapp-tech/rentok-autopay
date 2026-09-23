@@ -374,6 +374,8 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   - **So (Claude's calls):** a royal bloom top left, an indigo-violet bloom top right and a warm gold bloom behind the coin, drifting slowly under grain; the sheet now shows whenever autopay is offered, with or without coins, because autopay is the news; the Mint film leaves the sheet and is kept for the Rent Coins page.
 
+- R88 (24 Sep, Sanchay) **The payment page's first-visit sheet becomes a payment-method sheet, built on Srijan's proposal of 23 Sep and taken further.** The full ruling and its context are in the private repo, `research/2026-09-24-awareness-sheet-call/`.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
