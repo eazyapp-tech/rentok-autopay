@@ -368,6 +368,12 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   His words: "yes, 3 steps, go ahead with the launch sheet".
 
+- R87 (23 Sep, Sanchay) **The launch sheet leads with autopay on her day (direction A): her date on the calendar, "Your rent pays itself on the 30th", three worries answered, and the coins as the reward for saying yes. The navy ground gets more than one blue; the choice of gradient is Claude's.**
+
+  His words: "A, go ahead and build it. I like it, but don't you think it's a little too blue? I want it to be blue, but maybe we can play with some kind of gradient... it's entirely up to you."
+
+  - **So (Claude's calls):** a royal bloom top left, an indigo-violet bloom top right and a warm gold bloom behind the coin, drifting slowly under grain; the sheet now shows whenever autopay is offered, with or without coins, because autopay is the news; the Mint film leaves the sheet and is kept for the Rent Coins page.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
