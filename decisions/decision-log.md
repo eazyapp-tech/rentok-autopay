@@ -326,6 +326,13 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Example:** rent ₹12,000, she spends 31,000 coins worth ₹310 and pays ₹11,690. The owner is settled ₹12,000; the settlement shows ₹310 as paid by RentOk.
   - **So (Claude's reading):** coins are RentOk's reward, never the owner's discount, so no owner consent or setting is needed; the backend must record the coin part of a payment as RentOk-funded so settlement pays it out; and the earn rate becomes a RentOk cost, paid when coins are spent (at 1 coin per ₹1 and ₹0.01 a coin, 1% of the rent paid through them).
 
+- R79 (23 Sep, Sanchay, the Autopay Map's fifth question) **Coins belong to her, not to the property. She keeps them if she cancels autopay, can spend them on her final dues, and takes what is left to her next RentOk home. Each coin expires 12 months after it was earned by default; the backend sets the period.**
+
+  His words: "I am also aligned with B, but not entirely. When she moves, it is okay. There will be some expiry. We can maintain the default 12 months from coin earned, but it will be driven from the backend."
+
+  - **Changes Claude's proposal:** expiry counts from when each coin was earned, not from 12 months without any payment.
+  - **So (Claude's reading):** coins expire in batches by the month they were earned, so spending takes the oldest first; the Rent Coins page shows what expires next and when; she is told before a batch expires; the backend sends the expiry date per batch. Cancelling autopay stops only the setup bonus being earned again, not earning from payments (R76).
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
