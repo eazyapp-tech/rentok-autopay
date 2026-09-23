@@ -220,13 +220,29 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   His words: "we take the mandate amount to be 15,000 or greater... hit multiple reductions subsequently, within a gap of, let's say, 2 minutes, 2 being our variable. It can be 5, it can be 1."
 
   **Three parts to this.**
-  1. **The mandate is approved at her full amount**, not at ₹15,000. This was already R46 and is restated here because R16's own text still said ₹15,000 and has now been annotated. It is each debit, never the mandate, that stops at ₹15,000.
+  1. **The mandate is approved at her full amount**, not at ₹15,000. *(Replaced 23 Sep by R68: she approves a ceiling set from her fixed dues, never above ₹15,000. Noted by Claude.)* This was already R46 and is restated here because R16's own text still said ₹15,000 and has now been annotated. It is each debit, never the mandate, that stops at ₹15,000.
   2. **The parts run one after another on the same day**, each with its own pre-debit notice, and the rent reads paid only when the last one lands.
   3. **The gap is a setting with a default of two minutes.** Not a hardcoded wait. Kamal's launch room draws five minutes; two is the default because it is the value Sanchay named, and the setting is what matters: if Cashfree turns out to refuse same-day parts, the fallback to one part a day is then a configuration change rather than a rebuild.
 
   **What this rests on, and neither is in hand.** Cashfree must accept two debits on one mandate inside 24 hours, which PhonePe has confirmed and Cashfree has not (Cashfree question 1). And **AFA and 2FA must be enabled on RentOk's Cashfree account**, which Kamal's launch room says they are not (Cashfree question 11). Until both land, one part a day collects the same money more slowly.
 
   **One consequence worth naming, and it is Claude's reading rather than Sanchay's words.** `research/legal.md`'s addendum of 17 September assessed this split at **24 to 48 hours** between parts, and its main worry was that "bank velocity checks exist to catch exactly that pattern". A two-minute gap is a sharper version of the same fact pattern, not a different one: two debits two minutes apart read more like one payment cut in half than two debits on consecutive days do. The risk named there is declines, or Cashfree acting on all RentOk mandates rather than only the split ones. **This does not change the ruling**, because the purpose of the split is to stay under RBI's PIN threshold and not to avoid a charge (Autopay has no prescribed MDR, so splitting saves nothing there, which is also why N1 does not reach it). It does mean **the gap goes into the written question to Cashfree alongside the same-day question**, so the answer covers the interval we actually intend to use.
+
+- R68 (23 Sep, Sanchay) **The Autopay ceiling: her fixed monthly dues plus ₹2,000, rounded up to the next ₹5,000, never above ₹15,000. Every number in that rule, and R67's gap, is a backend setting, not a constant in any app.**
+
+  His words, approving the rule: "we will keep these numbers as variables, to be able to change from backend".
+
+  **What the ceiling is.** The largest single debit her mandate allows, which she approves once at setup. It comes from his 22 Sep implementation call: ₹12,000 of fixed dues gets a ₹15,000 ceiling so a variable electricity bill fits without asking her again. On her day, Option 2 takes whatever monthly dues are open, and anything above the ceiling is split into parts of up to the ceiling, the set gap apart (R67). So the ceiling never needs approving again.
+
+  **Worked through.** ₹6,000 of fixed dues gets ₹10,000. ₹12,000 gets ₹15,000, his own example. ₹18,099 gets ₹15,000, and her ₹18,099 is taken as ₹15,000 plus ₹3,099. It stops at ₹15,000 because a single debit above that needs her PIN (RBI e-mandate framework, para 8(a)), so a higher ceiling buys nothing.
+
+  **The four settings, with today's values.** Per-debit cap ₹15,000. Buffer ₹2,000. Rounding step ₹5,000. Gap between parts two minutes. They live in one row of the backend's existing `internal_config` table, which four other features already read, so changing any of them needs no release of any app.
+
+  **One place computes the ceiling: the backend.** It is the same number the backend sends Cashfree as the mandate's maximum, so the screen and the mandate cannot disagree. The apps display it, and never recompute it.
+
+  **"Fixed monthly dues"** means her recurring dues of a fixed amount: rent, fixed packages such as food, and the platform fee. Variable dues such as metered electricity are left out of the ceiling but are still taken on her day if they are open (R18). Late fines are never taken by Autopay (R29).
+
+  **This corrects two lines, marked here rather than rewritten.** R67 and the note under R16 both say the mandate is approved "at her full amount". That wording came from Claude's design note under R46, "the limit equals her regular dues", which is now replaced by this ruling. What both got right stands: each debit stops at ₹15,000.
 
 ## Issues filed today (rentok-backend)
 

@@ -67,10 +67,10 @@ A tenant counts when she has an approved, active UPI Autopay or e-NACH mandate (
 | | Option 1: "My rent, every {her rent period}" | Option 2: "All my dues, when they're due" (recommended, highlighted) |
 | --- | --- | --- |
 | Mandate type | A fixed schedule (monthly, quarterly, half-yearly or yearly), matching her rent period. Cashfree debits it on that schedule [Cashfree] | On demand, shown as "as presented" in her UPI app. RentOk raises each debit |
-| What she approves | A **fixed amount**: her regular dues for the period, listed line by line | An **approved limit** equal to her regular dues, listed line by line, for example "₹10,000 rent + ₹58 platform fee = up to ₹10,058 per debit". No round-number buffer |
+| What she approves | A **fixed amount**: her regular dues for the period, listed line by line | An **approved ceiling** set by the backend from her fixed monthly dues: plus ₹2,000, rounded up to the next ₹5,000, never above ₹15,000 (R68). ₹12,000 of fixed dues gets ₹15,000, so a variable electricity bill fits without a new approval. Every number is a backend setting |
 | What is taken on her day | That fixed amount, once per period | Her regular dues for the period, in parts of up to ₹15,000 when the total is higher (R16) |
 | Extra bills (electricity, repairs, one-off charges) | Sent to her as a "Pay now" request, with an offer to switch to Option 2 | "Request payment via Autopay" (R47), described below |
-| Above ₹15,000 | Her bank asks for her UPI PIN on every debit [Cashfree]. Setup says so and points her to Option 2 or to a bank-account mandate | Taken in parts of up to ₹15,000 each, two minutes apart by default (R67), so no PIN any time. The limit she approves is her full dues, not ₹15,000 (R46, R67) |
+| Above ₹15,000 | Her bank asks for her UPI PIN on every debit [Cashfree]. Setup says so and points her to Option 2 or to a bank-account mandate | Taken in parts of up to ₹15,000 each, two minutes apart by default (R67), so no PIN any time. Parts are up to her ceiling, which never exceeds ₹15,000 (R68) |
 | Pause after approval | RentOk pauses the mandate at her bank through Cashfree and resumes it on the date [Cashfree] | RentOk raises no debits for those periods |
 | Changing her day | Needs a change on Cashfree's side, possibly a new approval [ask Cashfree] | Takes effect the next period |
 | Her dues go down for good (rent cut, fee turned off) | RentOk lowers the fixed amount; no new approval is needed [Cashfree] | Nothing to do: RentOk takes less |
