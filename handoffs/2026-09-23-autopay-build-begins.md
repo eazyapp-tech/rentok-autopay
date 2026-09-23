@@ -1,6 +1,7 @@
 # Handoff: the ₹15,000 tail, two rulings, and the first build on the payment page (23 Sep 2026)
 
-Sessions `e561c4b0-737d-4ece-978e-fe271ccb98e4`, continuing `18944ffa-833a-4cff-9dd9-7ddf336bc380`.
+Sessions `0e35cba0-3058-47ee-8b79-45518c156d94` and `e561c4b0-737d-4ece-978e-fe271ccb98e4`, continuing
+`18944ffa-833a-4cff-9dd9-7ddf336bc380`.
 The earlier record from this run is `2026-09-22-all-five-surfaces.md`.
 
 ## What I set out to do
@@ -44,6 +45,13 @@ handoff, `docs/handoffs/2026-09-23-autopay-setup-screen.md`.
 `rentok-backend#6825` (the payload fields R41, R46 and R68 need, `next_debit.due_ids`, and the
 window using the smaller of the two graces).
 
+**Cashfree's server-to-server flow, added late on 23 Sep.** Cashfree calls it "Seamless", against
+"Hosted checkout". `research/cashfree-s2s-seamless.md` maps its six steps against our code. We
+already create mandates and take debits seamlessly. The approval still goes through Cashfree's hosted
+page, and **the pre-debit notice call (`notify-mandate`) is called nowhere**, which Option 2 cannot
+run without. Added to `rentok-backend#7078`. UPI Collect is being withdrawn: intent on mobile, QR on
+desktop.
+
 ## Decisions, with reasons
 
 - **The setup screen was built on /p2, not in Kamal's HTML.** Every number on it was ruled, so there
@@ -86,5 +94,7 @@ window using the smaller of the two graces).
 
 ## The next step
 
-Get Sanchay's ruling on arrears, then open the setup-screen PR and send Kamal the Cashfree note with
-AFA and 2FA, the interval, and the corrected ₹6.6 crore sizing.
+Build the seamless approval into the setup sheet (UPI app buttons on mobile, QR on desktop, behind
+`CAN_SET_UP`), which was recommended and is waiting on Sanchay's go. Alongside it: his ruling on
+arrears, the setup-screen PR, and the Cashfree note to Kamal with AFA and 2FA, the interval, and the
+corrected ₹6.6 crore sizing.
