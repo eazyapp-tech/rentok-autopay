@@ -338,7 +338,13 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   His words: "A, someone else approves at launch".
 
   - **The option he chose, as Claude put it:** at the approve step she taps "Someone else pays"; the payer gets a link or QR and approves in their own UPI app (Kamal's prototype has this flow). The option carried Claude's line that the coins still go to the tenant, because the rent is hers.
-  - **So (Claude's reading):** the mandate sits on the payer's bank account, so the payer's bank sends the pre-debit notice and the payer can revoke it in their UPI app at any time, which RentOk cannot stop; on RentOk's own surfaces pause and cancel stay hers (R72). Your autopay must name who pays ("Paid from Papa's account") and she must see when the payer revokes it. A failed debit is told to both.
+  - **So (Claude's reading, corrected the same day by R81):** the mandate sits on the payer's bank account, so the payer's bank sends the pre-debit notice and the payer can revoke it in their UPI app at any time, which RentOk cannot stop; on RentOk's own surfaces pause and cancel stay hers (R72). ~~Your autopay must name who pays ("Paid from Papa's account") and a failed debit is told to both.~~ Wrong: setup has no sign-in, so RentOk never knows who approved (R81). She must still see when the mandate is revoked.
+
+- R81 (23 Sep, Sanchay, correcting Claude's reading of R80) **Setting up autopay needs no sign-in. Whoever approves does it on the tenant's behalf, and that is all RentOk shows. Changing it (edit, pause, cancel, change the day) and spending coins need her phone number and an OTP.**
+
+  His words: "there is no auth for setting up auto pay... Whoever sets it up is on behalf of the tenant, so we only show that... When it comes to editing, pausing, canceling, changing the date, anything like that, or redeeming the coins and all, then the phone number login and OTP come into play."
+
+  - **So (Claude's reading):** no screen names a payer or says "your parent"; the tenant is the only person the product addresses. Spending coins on the pay screen is behind an OTP, while paying the bill is not, so "Use my coins" asks for her OTP first and then brings her back to the same pay screen with the amount reduced. The sign-in backend work (rentok-backend#6816) is now needed for coins at launch, not only for managing autopay.
 
 ## Issues filed today (rentok-backend)
 
