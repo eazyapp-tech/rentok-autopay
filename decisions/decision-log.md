@@ -250,7 +250,17 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   **What "current month" has to mean.** The rent period her debit is paying, not the calendar month the debit falls in. They differ when her window crosses the month end (R41): rent due on the 30th, debit on the 3rd. The engine today uses the calendar month, so it would miss that rent; filed as rentok-backend#7179. For the ordinary case the engine already does this: it ties each debit to that month's bills by id, not oldest first, and 1,392 of 1,408 bills linked in production sit in the right month.
 
-  **Still being discussed, not part of this ruling.** Sanchay raised that the payment page already lets a tenant edit the amount when her property allows partial payment, so she could choose to pay more (older bills) or less. Claude's position, put to him the same day: the edit belongs to what she pays today, not to the monthly debit, which the bank fixes 24 hours ahead and which stops being automatic if it needs setting every month. Recorded here when he rules.
+  **Settled the same day as R70, below:** the edit belongs to what she pays today.
+
+- R70 (23 Sep, Sanchay) **The amount she can edit is what she pays today, never the monthly debit.**
+
+  His words: "yes, edit belongs to today's payment, go ahead."
+
+  **Two amounts at setup, kept apart.** What she pays today goes through the payment page's existing pay screen, where she may type more or less only if her property allows partial payment (78.6% of tenants can). Older unpaid bills are cleared there, on purpose. What autopay takes each month follows R69, the current month only, and is never editable: the bank fixes it at the notice 24 hours ahead, and a debit she has to adjust each month is no longer automatic. The partial payment setting therefore changes what she may type today and nothing about the monthly rule.
+
+  **The setup sheet shows both,** the monthly terms and what is still hers to pay now, and the second is the same number as the page's "Pay all", computed in one place.
+
+  **Paying today inside the same approval ("pay and set up", his 22 Sep call) waits for Cashfree:** whether the approval can carry a real first payment, kept rather than refunded, and up to what amount (Cashfree question 2). Until then she pays today first, then sets up.
 
 ## Issues filed today (rentok-backend)
 
