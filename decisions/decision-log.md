@@ -279,6 +279,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Still standing:** managers cannot pause or stop Autopay themselves (R39); the property is told when she pauses or cancels (R45, 23 Sep call); a pause can run to the end of her stay, her move-out date first, else her agreement's end (R50, his 23 Sep evening voice note).
   - **When a pause starts, Claude's reading, not yet ruled:** with her next debit, which is always at least two days away, so the bank's notice has not gone. The 23 Sep call said "from the next cycle"; the pause screen shows exactly which debits it skips.
 
+- R73 (23 Sep, Sanchay approved Claude's pick) **The Rent Coins launch sheet opens on her first visit, before anything else, except while she is two or more months behind. Then it waits for a calmer visit.**
+
+  His words: "go with your pick on the launch sheet - ok."
+
+  - **What Claude proposed:** keep the sheet first, as he asked on 23 Sep, but hold it when she is badly behind, because a "new on RentOk" sheet over money trouble is the wrong moment. The tenant-journey review had suggested showing it only after payment whenever bills are overdue.
+  - **Counted in months, not bills (Claude's refinement while building):** one month's rent, electricity and food are three late bills and one ordinary slip. A tenant one month late is exactly who Autopay is for, so the sheet still opens for her. The test tenant (four bills, all due 17 Sep) proved the bill count wrong.
+  - **Waiting does not use up the sheet.** It is once per tenant, and only an actual showing marks it seen. The small top card on her bill stays in every case.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
