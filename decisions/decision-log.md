@@ -319,6 +319,13 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Why it holds (Claude's reading):** the choice to spend is the reward and the reason to return; an automatic reduction turns coins into a hidden discount by payment method, which the legal notes under R71 mark high risk; and an autopay amount that moves on its own is what makes a debit feel untrustworthy.
   - **So:** an autopay debit always takes the bill as it stands; coins accumulate; she spends them by choice on the pay screen (R75) or, later, in the store.
 
+- R78 (23 Sep, Sanchay, the Autopay Map's fourth question) **When she spends coins on rent, RentOk pays the difference. The owner always receives the full rent.**
+
+  His words: "RentOk covers it, owner gets full rent".
+
+  - **Example:** rent ₹12,000, she spends 31,000 coins worth ₹310 and pays ₹11,690. The owner is settled ₹12,000; the settlement shows ₹310 as paid by RentOk.
+  - **So (Claude's reading):** coins are RentOk's reward, never the owner's discount, so no owner consent or setting is needed; the backend must record the coin part of a payment as RentOk-funded so settlement pays it out; and the earn rate becomes a RentOk cost, paid when coins are spent (at 1 coin per ₹1 and ₹0.01 a coin, 1% of the rent paid through them).
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
