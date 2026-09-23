@@ -262,6 +262,15 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   **Paying today inside the same approval ("pay and set up", his 22 Sep call) waits for Cashfree:** whether the approval can carry a real first payment, kept rather than refunded, and up to what amount (Cashfree question 2). Until then she pays today first, then sets up.
 
+- R71 (23 Sep, Sanchay, closing open question 22) **Rent Coins are part of the launch. Autopay is rewarded in coins, never cash.**
+
+  His words: "yes coins are in, go with coins... We are giving coins, not cash. Coins can be redeemed against reducing the payable (that is, rent), or against any vouchers... 100 coins = ₹1. Let's keep that. However, that is a variable; the backend can decide whatever we want later on."
+
+  - **Value:** 100 coins are worth ₹1 today. A backend setting, like every number in R68.
+  - **Spending them:** against what she owes (rent), or on vouchers at the Hubble store.
+  - **Earning them, Claude's default until Sanchay sets it:** a one-time bonus for setting up, and coins on every rupee autopay pays. Both are backend settings. The harness shows Kamal's prototype values (1,000 for setting up, 1 per rupee), marked as samples.
+  - **The copy says "coins" and "rewards", never "discount on rent".** Claude raised once, on 23 Sep, that a price difference by payment method is what our legal notes mark high risk; Sanchay chose coins. The lawyer reads the rewards wording with the agreement.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
