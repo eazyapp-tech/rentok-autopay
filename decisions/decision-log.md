@@ -303,6 +303,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **The store (Hubble):** in scope, not at launch, behind a backend switch. Claude's reading: while the switch is off, the page shows no store and no "coming soon", because a door to nothing is a dead end.
   - **Still open (the map's questions 2 to 7):** what earns coins, using coins on each debit by themselves, who pays the owner the difference, expiry and leaving, a parent approving, step 4's hero.
 
+- R76 (23 Sep, Sanchay, the Autopay Map's second question; replaces R71's earning default) **Every rent and bill payment made in the RentOk ecosystem earns Rent Coins, and setting up autopay earns a one-time bonus. The backend drives the rules.**
+
+  His words: "Every rent & other bill payment earns the coin. And auto-pay setup. The logic and all for that can be driven from the backend, but for now, we can simply assume that all the bill payments done via the payment page, the tenant app, or the RentOk ecosystem earn the coin."
+
+  - **Replaces** the earning line in R71 ("coins on every rupee autopay pays", which was Claude's default). Claude argued once for autopay-only (coins exist to move tenants to autopay); Sanchay chose every payment.
+  - **What it changes (Claude's reading):** Rent Coins is a rewards programme for every tenant, with the autopay setup bonus as the largest single reward; the launch story leads with coins, autopay as the boost. Every receipt and the pay screen show coins. Five lines on the preview are now false and are fixed in the coins pass: the earn line on the launch sheet and in the setup coins strip ("for every ₹1 autopay pays"), the balance strip on Your autopay ("for every ₹1 it pays"), the pause screen ("No Rent Coins on the months you pay yourself") and the cancel screen ("You stop earning Rent Coins").
+  - **Open detail, not yet asked:** whether cash recorded by the manager counts as a payment in the ecosystem.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
