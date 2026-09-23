@@ -364,6 +364,10 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   His words: "we don't want to move into coins right now. First, let's solve all of steps 1, 2, 3, and 4 of AutoPay and everything, and also that bottom sheet that comes on the homepage... and then only we will move on to coins later."
 
+- R86 (23 Sep, Sanchay) **Setup is three steps: what it pays, which day, check and approve. The "why" is not a numbered step: the launch sheet carries it, and "Know more" opens a How it works page. From the launch sheet she lands on step 1.**
+
+  His words: "yes, 3 steps, go ahead with the launch sheet".
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
