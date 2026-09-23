@@ -346,6 +346,13 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
 
   - **So (Claude's reading):** no screen names a payer or says "your parent"; the tenant is the only person the product addresses. Spending coins on the pay screen is behind an OTP, while paying the bill is not, so "Use my coins" asks for her OTP first and then brings her back to the same pay screen with the amount reduced. The sign-in backend work (rentok-backend#6816) is now needed for coins at launch, not only for managing autopay.
 
+- R82 (23 Sep, Sanchay, on the step 4 drawing; corrects the mechanism in R80) **There is no "Someone else will approve" button, link or QR. A parent who pays already has the payment link and sets autopay up from it themselves.**
+
+  His words: "If it is a parent setting it up, then the parent will already have the payment page link, and they can simply do it on their own. We don't need two buttons here."
+
+  - **Removes:** the share action on the approve screen ("Someone else pays your rent? Send it to them") and Kamal's QR route. R80 stands as "anyone holding her link can set it up"; R81 (no sign-in at setup) is what makes that work.
+- R83 (23 Sep, Sanchay) **Step 4 leads with her autopay card (option A), as a first version to improve.** The terms stay open on the screen, never folded away ("the feeling of control"); edit controls on the chosen values are icons, not a second blue word. The three date tiles are to be replaced by a better picture of when each month's debit happens (he suggested a calendar), still to be designed.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
