@@ -311,6 +311,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **What it changes (Claude's reading):** Rent Coins is a rewards programme for every tenant, with the autopay setup bonus as the largest single reward; the launch story leads with coins, autopay as the boost. Every receipt and the pay screen show coins. Five lines on the preview are now false and are fixed in the coins pass: the earn line on the launch sheet and in the setup coins strip ("for every ₹1 autopay pays"), the balance strip on Your autopay ("for every ₹1 it pays"), the pause screen ("No Rent Coins on the months you pay yourself") and the cancel screen ("You stop earning Rent Coins").
   - **Open detail, not yet asked:** whether cash recorded by the manager counts as a payment in the ecosystem.
 
+- R77 (23 Sep, Sanchay, the Autopay Map's third question) **Coins are only ever spent by her own tap. Nothing spends them for her: no automatic reduction of the next rent or the next autopay debit.**
+
+  His words: "no, the person has to manually redeem it. We cannot have it auto-reduce the payable next time... If someone has auto pay set up, then they will keep on accumulating coins and all, and then they can spend it manually."
+
+  - **Rejects Claude's proposal** of a switch on Your autopay ("Use my coins on each debit", off by default).
+  - **Why it holds (Claude's reading):** the choice to spend is the reward and the reason to return; an automatic reduction turns coins into a hidden discount by payment method, which the legal notes under R71 mark high risk; and an autopay amount that moves on its own is what makes a debit feel untrustworthy.
+  - **So:** an autopay debit always takes the bill as it stands; coins accumulate; she spends them by choice on the pay screen (R75) or, later, in the store.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
