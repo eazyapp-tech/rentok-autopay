@@ -20,6 +20,14 @@ Update this at the end of every session. Newest entry on top.
 
 ## Log
 
+### 23 Sep 2026 (the workflow and UI call, read and checked), Sanchay with Claude Code
+
+- Read the full recording of the afternoon's call with Kamal and the tech team (NeoSapien `a3adbea1`, about 133 minutes, not the 78 the summary says) in `research/2026-09-23-workflow-and-ui-call-check.md`; cleaned transcript in the private repo.
+- **Agreed in the room:** launch first with the Autopay already built, on the payment page; an unticked "Set up autopay" checkbox with "Know more"; a two-step flow (benefits and option, then day and a preview of the next debits); Cashfree's hosted page for launch, our own screen later; confirmation, then a manage screen with the next three debits and change date, pause, cancel; pause is RentOk's own, to a date she picks, from the next cycle; the Pay button never blocked. Method: Sanchay builds the UI mocks, the room sits on them at 8:30 p.m., the backend contract follows.
+- **Disagrees with the record in six places**, tabled in the file. Two became open questions: 31, the ceiling at launch (flat ₹15,000 said in the room against R68), and 32, launching on today's charge settings against R64. Open question 30 (who pauses) now carries the call's lean.
+- **Confirms two known defects in the engineers' own words:** Cashfree cancellations are missed (#7124) and the notice before a debit is never sent (#7078).
+- Two remarks in the call were about the setup sheet built earlier: "looks completely broken" and "the bottom sheet is completely full". Both support the two-step flow.
+
 ### 23 Sep 2026 (R67, and the prototype read properly), Sanchay with Claude Code
 
 - **R67:** rent above ₹15,000 is collected as several debits **two minutes apart by default**, the gap being a setting rather than a hardcoded wait. The mandate is approved at her full amount; only each debit stops at ₹15,000. It rests on two things not in hand: Cashfree accepting same-day parts, and AFA/2FA being enabled on our account.
