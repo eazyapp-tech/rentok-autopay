@@ -271,6 +271,14 @@ Rulings are numbered R, my calls W, exclusions N, open questions Q. Nothing here
   - **Earning them, Claude's default until Sanchay sets it:** a one-time bonus for setting up, and coins on every rupee autopay pays. Both are backend settings. The harness shows Kamal's prototype values (1,000 for setting up, 1 per rupee), marked as samples.
   - **The copy says "coins" and "rewards", never "discount on rent".** Claude raised once, on 23 Sep, that a price difference by payment method is what our legal notes mark high risk; Sanchay chose coins. The lawyer reads the rewards wording with the agreement.
 
+- R72 (23 Sep, Sanchay, closing open question 30; changes R48) **A tenant pauses or cancels her Autopay herself. Neither depends on the manager app or the management.**
+
+  His words: "Pause or cancel is not dependent on the manager app or the management. Tenants can do it on their own."
+
+  - **Replaces R48's approval step.** A pause is no longer a request the property approves, and R50's "counts as approved after 48 hours" falls away with it. Cancel was already direct (R48); it stays so.
+  - **Still standing:** managers cannot pause or stop Autopay themselves (R39); the property is told when she pauses or cancels (R45, 23 Sep call); a pause can run to the end of her stay, her move-out date first, else her agreement's end (R50, his 23 Sep evening voice note).
+  - **When a pause starts, Claude's reading, not yet ruled:** with her next debit, which is always at least two days away, so the bank's notice has not gone. The 23 Sep call said "from the next cycle"; the pause screen shows exactly which debits it skips.
+
 ## Issues filed today (rentok-backend)
 
 - #6995 P0 two Autopay engines can debit the same tenant twice.
